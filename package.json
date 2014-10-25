@@ -1,0 +1,32 @@
+{
+  "name": "blog-redalemeden",
+  "version": "1.0.0",
+  "description": "Blog of Reda Lemeden",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kaishin/blog-redalemeden.git"
+  },
+  "author": "Reda Lemeden",
+  "license": "MIT",
+  "homepage": "http://blog.redalemeden.com",
+  "devDependencies": {
+    "browser-sync": "^1.6.0",
+    "coffee-script": "^1.8.0",
+    "gulp": "^3.8.9",
+    "gulp-autoprefixer": "1.0.1",
+    "gulp-coffee": "^2.2.0",
+    "gulp-front-matter": "^1.0.0",
+    "gulp-gh-pages": "^0.4.0",
+    "gulp-minify-html": "^0.1.6",
+    "gulp-ruby-sass": "^0.7.1",
+    "gulpsmith": "^0.5.2",
+    "handlebars": "^2.0.0",
+    "lodash": "^2.4.1",
+    "metalsmith-drafts": "0.0.1",
+    "metalsmith-feed": "0.0.5",
+    "metalsmith-markdown": "^0.2.1",
+    "metalsmith-permalinks": "^0.4.0",
+    "metalsmith-templates": "^0.6.0",
+    "run-sequence": "^0.3.7"
+  }
+}
