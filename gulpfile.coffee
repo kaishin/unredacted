@@ -1,6 +1,6 @@
 browserSync = require "browser-sync"
 runSequence = require "run-sequence"
-lodash = require "lodash"
+_ = require "lodash"
 
 coffee = require "gulp-coffee"
 deploy = require "gulp-gh-pages"
@@ -22,11 +22,11 @@ gulp.task "default", ["build"]
 gulp.task "build", ->
   gulp.src "./source/**/*.md"
     .pipe frontMatter().on "data", (file) ->
-      lodash.assign file, file.frontMatter
+      _.assign file, file.frontMatter
       delete file.frontMatter
     .pipe gulpsmith()
       .metadata
-        title: "Blog of Reda Lemeden"
+        title: "Bloge of Reda Lemeden"
         description: "You know the drill"
       .use markdown()
       .use templates
