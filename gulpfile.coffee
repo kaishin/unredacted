@@ -1,6 +1,8 @@
+_ = require "lodash"
 browserSync = require "browser-sync"
 runSequence = require "run-sequence"
-_ = require "lodash"
+handlebars = require "handlebars"
+layouts = require "handlebars-layouts"
 
 coffee = require "gulp-coffee"
 deploy = require "gulp-gh-pages"
@@ -17,6 +19,8 @@ markdown = require "metalsmith-markdown"
 permalinks = require "metalsmith-permalinks"
 templates = require "metalsmith-templates"
 
+layouts(handlebars)
+
 gulp.task "default", ["build"]
 
 gulp.task "build", ->
@@ -31,4 +35,9 @@ gulp.task "build", ->
       .use markdown()
       .use templates
         engine: "handlebars"
+        partials:
+          index: "index"
+      .use permalinks
+        pattern: ":date/:title"
+        date: "YYYY"
     .pipe gulp.dest "./build"

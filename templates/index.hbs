@@ -4,6 +4,8 @@
     <meta name="description" content="{{ description }}">
   </head>
   <body>
-    {{{ contents }}}
+    {{# block "main"}}
+      {{{ contents }}}
+    {{/ block}}
   </body>
 </html>
