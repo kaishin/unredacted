@@ -22,9 +22,12 @@ templates = require "metalsmith-templates"
 
 layouts(handlebars)
 
-gulp.task "default", ["build"]
+gulp.task "default", ["develop"]
+gulp.task "develop", ["browser-sync", "watch"]
+gulp.task "minify", ["minify-html"]
+gulp.task "build", ["sass", "coffee", "blog"]
 
-gulp.task "build", ->
+gulp.task "blog", ->
   gulp.src "./source/**/*.md"
     .pipe frontMatter().on "data", (file) ->
       _.assign file, file.frontMatter
@@ -43,6 +46,12 @@ gulp.task "build", ->
         date: "YYYY"
     .pipe gulp.dest "./build"
 
+gulp.task "watch", ->
+  gulp.watch "./sass/*.scss", ["sass"]
+  gulp.watch "./coffeescript/*.coffee", ["coffee"]
+  gulp.watch "./source/**/*.md", ["blog"]
+  gulp.watch "./build/**/*.html", -> browserSync.reload()
+
 gulp.task "sass", ->
   gulp.src("./sass/*.scss")
     .pipe sass
@@ -59,3 +68,15 @@ gulp.task "coffee", ->
     .on "error", (error) -> gutil.log(error.message)
     .pipe gulp.dest("./build/javascript")
     .pipe browserSync.reload(stream: true)
+
+gulp.task "minify-html", ->
+  gulp.src "./build/**/*.html"
+    .pipe minifyHTML()
+    .pipe gulp.dest "./build/"
+
+gulp.task "browser-sync", ->
+  browserSync.init null,
+    server:
+      baseDir: "./build"
+    host: "localhost"
+    open: true
