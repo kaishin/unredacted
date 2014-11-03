@@ -11,7 +11,7 @@ gulp = require "gulp"
 gulpsmith = require "gulpsmith"
 minifyHTML = require "gulp-minify-html"
 prefix = require "gulp-autoprefixer"
-sass = require "gulp-ruby-sass"
+sass = require "gulp-sass"
 
 drafts = require "metalsmith-drafts"
 feed = require "metalsmith-feed"
@@ -41,3 +41,13 @@ gulp.task "build", ->
         pattern: ":date/:title"
         date: "YYYY"
     .pipe gulp.dest "./build"
+
+gulp.task "sass", ->
+  gulp.src("./sass/*.scss")
+    .pipe sass
+      errLogToConsole: true
+      outputStyle: "compressed"
+      precision: 2
+    .pipe prefix(["last 15 versions", "> 1%", "ie 9"], cascade: true)
+    .pipe gulp.dest("./build/css")
+    .pipe browserSync.reload(stream: true)
