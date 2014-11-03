@@ -19,6 +19,7 @@
     "gulp-gh-pages": "^0.4.0",
     "gulp-minify-html": "^0.1.6",
     "gulp-sass": "^1.2.2",
+    "gulp-util": "^3.0.1",
     "gulpsmith": "^0.5.2",
     "handlebars": "^2.0.0",
     "handlebars-layouts": "^1.0.0",

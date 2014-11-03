@@ -12,6 +12,7 @@ gulpsmith = require "gulpsmith"
 minifyHTML = require "gulp-minify-html"
 prefix = require "gulp-autoprefixer"
 sass = require "gulp-sass"
+gutil = require "gulp-util"
 
 drafts = require "metalsmith-drafts"
 feed = require "metalsmith-feed"
@@ -50,4 +51,11 @@ gulp.task "sass", ->
       precision: 2
     .pipe prefix(["last 15 versions", "> 1%", "ie 9"], cascade: true)
     .pipe gulp.dest("./build/css")
+    .pipe browserSync.reload(stream: true)
+
+gulp.task "coffee", ->
+  gulp.src("./coffeescript/*.coffee")
+    .pipe coffee bare: true
+    .on "error", (error) -> gutil.log(error.message)
+    .pipe gulp.dest("./build/javascript")
     .pipe browserSync.reload(stream: true)
