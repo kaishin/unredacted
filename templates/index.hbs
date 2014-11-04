@@ -1,6 +1,9 @@
 <html>
   <head>
-    <title>{{ title }} &mdash; {{ site.title }}</title>
+    <title>
+      {{# if title}}{{ title }} &mdash; {{/ if}}
+      {{ site.title }}
+    </title>
     <meta name="description" content="{{ description }}">
   </head>
   <body>
