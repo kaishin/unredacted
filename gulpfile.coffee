@@ -49,7 +49,7 @@ gulp.task "blog", ->
 gulp.task "watch", ->
   gulp.watch "./sass/*.scss", ["sass"]
   gulp.watch "./coffeescript/*.coffee", ["coffee"]
-  gulp.watch "./source/**/*.md", ["blog"]
+  gulp.watch ["./source/**/*.md", "./templates/**/*.hbs"], ["blog"]
   gulp.watch "./build/**/*.html", -> browserSync.reload()
 
 gulp.task "sass", ->
