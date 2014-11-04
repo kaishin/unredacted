@@ -19,6 +19,7 @@ feed = require "metalsmith-feed"
 markdown = require "metalsmith-markdown"
 permalinks = require "metalsmith-permalinks"
 templates = require "metalsmith-templates"
+metadata = require "metalsmith-metadata"
 
 layouts(handlebars)
 
@@ -28,14 +29,13 @@ gulp.task "minify", ["minify-html"]
 gulp.task "build", ["sass", "coffee", "blog"]
 
 gulp.task "blog", ->
-  gulp.src "./source/**/*.md"
+  gulp.src ["./source/**/*.md", "./data/**/*"]
     .pipe frontMatter().on "data", (file) ->
       _.assign file, file.frontMatter
       delete file.frontMatter
     .pipe gulpsmith()
-      .metadata
-        title: "Bloge of Reda Lemeden"
-        description: "You know the drill"
+      .use metadata
+        site: "site.yaml"
       .use markdown()
       .use templates
         engine: "handlebars"
