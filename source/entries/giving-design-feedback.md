@@ -1,6 +1,7 @@
 ---
 date: 2010-05-07 20:52:46
 title: "Five Things to Avoid When Giving Design Feedback"
+slug: giving-design-feedback
 ---
 
 It would be hard to argue that there is no place for subjectivity in design. Unfortunately, this is the very reason that makes giving constructive design feedback a daunting challenge. Add to this the fact that not all of us are designers: sometimes you feel that something is wrong, but you can't explicitly describe it, let alone conveying it to others. Needless to say, failing to provide constructive feedback makes things a tad harder for both parties. For better results, here are five things to avoid when criticizing design:

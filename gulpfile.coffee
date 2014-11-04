@@ -42,7 +42,7 @@ gulp.task "blog", ->
         partials:
           index: "index"
       .use permalinks
-        pattern: ":date/:title"
+        pattern: ":date/:slug"
         date: "YYYY"
     .pipe gulp.dest "./build"
 
