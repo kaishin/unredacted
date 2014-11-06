@@ -20,6 +20,7 @@ markdown = require "metalsmith-markdown"
 permalinks = require "metalsmith-permalinks"
 templates = require "metalsmith-templates"
 metadata = require "metalsmith-metadata"
+collections = require "metalsmith-collections"
 
 layouts(handlebars)
 
@@ -37,6 +38,10 @@ gulp.task "blog", ->
       .use metadata
         site: "site.yaml"
       .use markdown()
+      .use collections
+        posts:
+          pattern: "./source/entries/*.md"
+          sortBy: "date"
       .use templates
         engine: "handlebars"
         partials:
