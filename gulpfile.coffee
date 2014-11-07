@@ -9,18 +9,18 @@ deploy = require "gulp-gh-pages"
 frontMatter = require "gulp-front-matter"
 gulp = require "gulp"
 gulpsmith = require "gulpsmith"
+gutil = require "gulp-util"
 minifyHTML = require "gulp-minify-html"
 prefix = require "gulp-autoprefixer"
 sass = require "gulp-sass"
-gutil = require "gulp-util"
 
+collections = require "metalsmith-collections"
 drafts = require "metalsmith-drafts"
 feed = require "metalsmith-feed"
 markdown = require "metalsmith-markdown"
+metadata = require "metalsmith-metadata"
 permalinks = require "metalsmith-permalinks"
 templates = require "metalsmith-templates"
-metadata = require "metalsmith-metadata"
-collections = require "metalsmith-collections"
 
 layouts(handlebars)
 
