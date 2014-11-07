@@ -1,7 +1,6 @@
 ---
 date: 2010-05-07 20:52:46
 title: "Five Things to Avoid When Giving Design Feedback"
-template: post.hbs
 slug: giving-design-feedback
 ---
 

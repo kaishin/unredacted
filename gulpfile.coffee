@@ -24,26 +24,39 @@ collections = require "metalsmith-collections"
 
 layouts(handlebars)
 
+globalTemplate = (config) ->
+  pattern = new RegExp(config.pattern)
+  (files, metalsmith, done) ->
+    for file of files
+      if pattern.test(file)
+        _file = files[file]
+        _file.template = config.templateName  unless _file.template
+    done()
+
 gulp.task "default", ["develop"]
 gulp.task "develop", ["browser-sync", "watch"]
 gulp.task "minify", ["minify-html"]
 gulp.task "build", ["sass", "coffee", "blog"]
 
 gulp.task "blog", ->
-  gulp.src ["./source/**/*.md", "./data/**/*"]
+  gulp.src ["./source/**/*.md", "./source/data/**/*", "./source/layouts/**/*.hbs"]
     .pipe frontMatter().on "data", (file) ->
       _.assign file, file.frontMatter
       delete file.frontMatter
     .pipe gulpsmith()
       .use metadata
         site: "site.yaml"
-      .use markdown()
       .use collections
         posts:
-          pattern: "./source/entries/*.md"
+          pattern: "posts/*.md"
           sortBy: "date"
+      .use globalTemplate
+        pattern: "posts"
+        templateName: "post.hbs"
+      .use markdown()
       .use templates
         engine: "handlebars"
+        directory: "./source/layouts"
         partials:
           index: "index"
       .use permalinks
@@ -52,13 +65,13 @@ gulp.task "blog", ->
     .pipe gulp.dest "./build"
 
 gulp.task "watch", ->
-  gulp.watch "./sass/*.scss", ["sass"]
-  gulp.watch "./coffeescript/*.coffee", ["coffee"]
-  gulp.watch ["./source/**/*.md", "./templates/**/*.hbs"], ["blog"]
+  gulp.watch "./source/sass/*.scss", ["sass"]
+  gulp.watch "./source/coffeescript/*.coffee", ["coffee"]
+  gulp.watch ["./source/**/*.md", "./source/**/*.hbs"], ["blog"]
   gulp.watch "./build/**/*.html", -> browserSync.reload()
 
 gulp.task "sass", ->
-  gulp.src("./sass/*.scss")
+  gulp.src "./source/sass/*.scss"
     .pipe sass
       errLogToConsole: true
       outputStyle: "compressed"
@@ -68,7 +81,7 @@ gulp.task "sass", ->
     .pipe browserSync.reload(stream: true)
 
 gulp.task "coffee", ->
-  gulp.src("./coffeescript/*.coffee")
+  gulp.src "./source/coffeescript/*.coffee"
     .pipe coffee bare: true
     .on "error", (error) -> gutil.log(error.message)
     .pipe gulp.dest("./build/javascript")
