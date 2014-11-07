@@ -33,6 +33,10 @@ globalTemplate = (config) ->
         _file.template = config.templateName  unless _file.template
     done()
 
+logger = (files, metalsmith, done) ->
+  console.log files
+  done()
+
 gulp.task "default", ["develop"]
 gulp.task "develop", ["browser-sync", "watch"]
 gulp.task "minify", ["minify-html"]
@@ -54,14 +58,16 @@ gulp.task "blog", ->
         pattern: "posts"
         templateName: "post.hbs"
       .use markdown()
+      .use permalinks
+        pattern: ":date/:slug"
+        date: "YYYY"
       .use templates
         engine: "handlebars"
         directory: "./source/layouts"
         partials:
           index: "index"
-      .use permalinks
-        pattern: ":date/:slug"
-        date: "YYYY"
+      .use feed
+        collection: "posts"
     .pipe gulp.dest "./build"
 
 gulp.task "watch", ->
