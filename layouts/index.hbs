@@ -5,13 +5,13 @@
       {{ site.title }}
     </title>
     <meta name="description" content="{{ description }}">
+    <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
     {{# block "main"}}
       {{{ contents }}}
     {{/ block}}
     {{#each collections.posts}}
-     HI POST
-     {{/each}}
+   {{/each}}
   </body>
 </html>

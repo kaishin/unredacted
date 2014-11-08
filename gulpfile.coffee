@@ -14,6 +14,7 @@ minifyHTML = require "gulp-minify-html"
 prefix = require "gulp-autoprefixer"
 sass = require "gulp-sass"
 
+metalsmith = require "metalsmith"
 collections = require "metalsmith-collections"
 drafts = require "metalsmith-drafts"
 feed = require "metalsmith-feed"
@@ -43,41 +44,41 @@ gulp.task "minify", ["minify-html"]
 gulp.task "build", ["sass", "coffee", "blog"]
 
 gulp.task "blog", ->
-  gulp.src ["./source/**/*.md", "./source/data/**/*", "./source/layouts/**/*.hbs"]
-    .pipe frontMatter().on "data", (file) ->
-      _.assign file, file.frontMatter
-      delete file.frontMatter
-    .pipe gulpsmith()
-      .use metadata
-        site: "site.yaml"
-      .use collections
-        posts:
-          pattern: "posts/*.md"
-          sortBy: "date"
-      .use globalTemplate
-        pattern: "posts"
-        templateName: "post.hbs"
-      .use markdown()
-      .use permalinks
-        pattern: ":date/:slug"
-        date: "YYYY"
-      .use templates
-        engine: "handlebars"
-        directory: "./source/layouts"
-        partials:
-          index: "index"
-      .use feed
-        collection: "posts"
-    .pipe gulp.dest "./build"
+  metalsmith(__dirname)
+    .source "./content"
+    .destination "./build"
+    .clean false
+    .use metadata
+      site: "data/site.yaml"
+    .use collections
+      posts:
+        pattern: "posts/*.md"
+        sortBy: "date"
+    .use globalTemplate
+      pattern: "posts"
+      templateName: "post.hbs"
+    .use markdown()
+    .use permalinks
+      pattern: ":date/:slug"
+      date: "YYYY"
+    .use templates
+      engine: "handlebars"
+      directory: "layouts"
+      partials:
+        index: "index"
+    .use feed
+      collection: "posts"
+    .build (error) ->
+      throw error if error
 
 gulp.task "watch", ->
-  gulp.watch "./source/sass/*.scss", ["sass"]
-  gulp.watch "./source/coffeescript/*.coffee", ["coffee"]
-  gulp.watch ["./source/**/*.md", "./source/**/*.hbs"], ["blog"]
+  gulp.watch "./sass/*.scss", ["sass"]
+  gulp.watch "./coffeescript/*.coffee", ["coffee"]
+  gulp.watch ["./content/**/*.md", "./layouts/**/*.hbs"], ["blog"]
   gulp.watch "./build/**/*.html", -> browserSync.reload()
 
 gulp.task "sass", ->
-  gulp.src "./source/sass/*.scss"
+  gulp.src "./sass/*.scss"
     .pipe sass
       errLogToConsole: true
       outputStyle: "compressed"
@@ -87,7 +88,7 @@ gulp.task "sass", ->
     .pipe browserSync.reload(stream: true)
 
 gulp.task "coffee", ->
-  gulp.src "./source/coffeescript/*.coffee"
+  gulp.src "./coffeescript/*.coffee"
     .pipe coffee bare: true
     .on "error", (error) -> gutil.log(error.message)
     .pipe gulp.dest("./build/javascript")
