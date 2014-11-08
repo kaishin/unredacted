@@ -71,7 +71,7 @@ gulp.task "blog", ->
     .build (error) ->
       throw error if error
 
-gulp.task "watch", ->
+gulp.task "watch", ["sass", "coffee", "blog"], ->
   gulp.watch "./sass/*.scss", ["sass"]
   gulp.watch "./coffeescript/*.coffee", ["coffee"]
   gulp.watch ["./content/**/*.md", "./layouts/**/*.hbs"], ["blog"]
