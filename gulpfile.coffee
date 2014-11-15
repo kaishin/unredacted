@@ -66,6 +66,7 @@ gulp.task "blog", ->
       directory: "layouts"
       partials:
         index: "index"
+        typekit: "partials/typekit"
     .use feed
       collection: "posts"
     .build (error) ->
