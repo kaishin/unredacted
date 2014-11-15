@@ -1,17 +1,30 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>
-      {{# if title}}{{ title }} &mdash; {{/ if}}
-      {{ site.title }}
-    </title>
-    <meta name="description" content="{{ description }}">
-    <link rel="stylesheet" href="css/main.css">
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    {{!-- Get Keywords --}}
+    {{!-- Get description --}}
+    <title>{{# if title}}{{ title }} &mdash; {{/ if}}{{ site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="{{# if keywords }}{{ keywords }}{{ else }}{{ site.keywords }}{{/ if}}">
+    <meta name="description" content="{{# if description }}{{ description }}{{ else }}{{ site.description }}{{/ if}}">
+    <link rel="stylesheet" href="/css/main.css">
+    {{# if date}}
+    <meta http-equiv="date" content="{{ date }}">
+    {{/ if}}
+    <meta name="robots" content="noodp, noydir">
+    <meta name="google-site-verification" content="{{ site.google_verification }}">
+    <meta http-equiv="cleartype" content="on">
   </head>
+
   <body>
     {{# block "main"}}
       {{{ contents }}}
     {{/ block}}
     {{#each collections.posts}}
    {{/each}}
+   {{!-- Javascript --}}
+   {{!-- Analytics --}}
   </body>
 </html>
