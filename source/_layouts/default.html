@@ -3,9 +3,10 @@
   {% include head.html %}
 
   <body>
-    {{ content }}
-    <footer>
-      <script src="/scripts/main.js" type="text/javascript"></script>
-    </footer>
+    {% include header.html %}
+    <main data-role="container">
+      {{ content }}
+    </main>
+    {% include footer.html %}
   </body>
 </html>
