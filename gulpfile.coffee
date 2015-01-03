@@ -26,10 +26,13 @@ paths =
   destinationStyles: "#{destinationFolder}/css/"
   scripts: "#{sourceFolder}/scripts/"
   destinationScripts: "#{destinationFolder}/scripts/"
-  jekyllFiles: ["#{sourceFolder}/**/*.md", "#{sourceFolder}/**/*.html", "#{sourceFolder}/**/*.xml"]
+  jekyllFiles: ["#{sourceFolder}/**/*.md", "#{sourceFolder}/**/*.html", "#{sourceFolder}/**/*.xml", "./**/*.yml"]
 
 gulp.task "default", ["develop"]
-gulp.task "develop", ["browser-sync", "watch"]
+
+gulp.task "develop", ->
+  runSequence ["watch", "browser-sync"]
+
 gulp.task "build", ->
   runSequence ["sass", "coffee"], ["minifyCSS", "minifyJS"], "jekyll-build"
 
