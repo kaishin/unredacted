@@ -1,6 +1,2 @@
-.DS_store
-.sass-cache/
-*.scssc
-*.map
+_site
 node_modules/
-build/

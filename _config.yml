@@ -1,0 +1,38 @@
+source: source
+
+title: Unredacted
+description: Thoughts and opinions of a software designer.
+tagline: Email the author.
+baseurl: ""
+
+url: http://unredacted.redalemeden.com
+future: false
+show_drafts: false
+lsi: true
+limit_posts: 0
+
+author:
+  name: Reda Lemeden
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+permalink: pretty
+exclude: [
+  "node_modules",
+  "gulp.js",
+  "gulpfile.coffee",
+  "package.json",
+  "README.md",
+  "Gemfile",
+  "Gemfile.lock"
+]
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: default

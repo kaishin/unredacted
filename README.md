@@ -1,5 +1,4 @@
-### Source code of blog.redalemeden.com
+# Unredacted
+##### Email the author.
 
-Uses Gulp and Metalsmith.
-
-2014 - MIT licensed.
+Thoughts and opinions of a software designer.

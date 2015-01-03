@@ -1,110 +1,107 @@
-_ = require "lodash"
 browserSync = require "browser-sync"
-runSequence = require "run-sequence"
-handlebars = require "handlebars"
-layouts = require "handlebars-layouts"
-
+cache = require "gulp-cached"
 coffee = require "gulp-coffee"
-deploy = require "gulp-gh-pages"
-frontMatter = require "gulp-front-matter"
+del = require "del"
 gulp = require "gulp"
-gulpsmith = require "gulpsmith"
 gutil = require "gulp-util"
-minifyHTML = require "gulp-minify-html"
+mediaQueries = require "gulp-combine-media-queries"
+minifyCSS = require "gulp-minify-css"
+minifyJS = require "gulp-uglify"
 prefix = require "gulp-autoprefixer"
+runSequence = require "run-sequence"
 sass = require "gulp-sass"
+scssLint = require "gulp-scss-lint"
+shell = require "gulp-shell"
 
-metalsmith = require "metalsmith"
-collections = require "metalsmith-collections"
-drafts = require "metalsmith-drafts"
-feed = require "metalsmith-feed"
-markdown = require "metalsmith-markdown"
-metadata = require "metalsmith-metadata"
-permalinks = require "metalsmith-permalinks"
-templates = require "metalsmith-templates"
+messages =
+  jekyllBuild: "Rebuilding Jekyll..."
 
-layouts(handlebars)
+sourceFolder = "./source"
+destinationFolder = "./_site"
 
-globalTemplate = (config) ->
-  pattern = new RegExp(config.pattern)
-  (files, metalsmith, done) ->
-    for file of files
-      if pattern.test(file)
-        _file = files[file]
-        _file.template = config.templateName  unless _file.template
-    done()
-
-logger = (files, metalsmith, done) ->
-  console.log files
-  done()
+paths =
+  sass: "#{sourceFolder}/_scss/"
+  coffee: "#{sourceFolder}/_coffee/"
+  styles: "#{sourceFolder}/css/"
+  destinationStyles: "#{destinationFolder}/css/"
+  scripts: "#{sourceFolder}/scripts/"
+  destinationScripts: "#{destinationFolder}/scripts/"
+  jekyllFiles: ["#{sourceFolder}/**/*.md", "#{sourceFolder}/**/*.html", "#{sourceFolder}/**/*.xml"]
 
 gulp.task "default", ["develop"]
 gulp.task "develop", ["browser-sync", "watch"]
-gulp.task "minify", ["minify-html"]
-gulp.task "build", ["sass", "coffee", "blog"]
+gulp.task "build", ->
+  runSequence ["sass", "coffee"], ["minifyCSS", "minifyJS"], "jekyll-build"
 
-gulp.task "blog", ->
-  metalsmith(__dirname)
-    .source "./content"
-    .destination "./build"
-    .clean false
-    .use metadata
-      site: "data/site.yaml"
-    .use collections
-      posts:
-        pattern: "posts/*.md"
-        sortBy: "date"
-    .use globalTemplate
-      pattern: "posts"
-      templateName: "post.hbs"
-    .use markdown()
-    .use permalinks
-      pattern: ":date/:slug"
-      date: "YYYY"
-    .use templates
-      engine: "handlebars"
-      directory: "layouts"
-      partials:
-        index: "index"
-        typekit: "partials/typekit"
-        header: "partials/header"
-    .use feed
-      collection: "posts"
-    .build (error) ->
-      throw error if error
+gulp.task "clean",
+  del.bind(null, ["_site"])
 
-gulp.task "watch", ["sass", "coffee", "blog"], ->
-  gulp.watch "./sass/*.scss", ["sass"]
-  gulp.watch "./coffeescript/*.coffee", ["coffee"]
-  gulp.watch ["./content/**/*.md", "./layouts/**/*.hbs"], ["blog"]
-  gulp.watch "./build/**/*.html", -> browserSync.reload()
+gulp.task "watch", ["sass", "coffee", "jekyll-serve"], ->
+  gulp.watch "#{paths.sass}/*.scss", ["sass"]
+  gulp.watch "#{paths.coffee}/*.coffee", ["coffee"]
+  gulp.watch paths.jekyllFiles, ["jekyll-rebuild"]
 
-gulp.task "sass", ->
-  gulp.src "./sass/*.scss"
+gulp.task "jekyll-serve",
+  shell.task "jekyll build --config _config.yml,_config.serve.yml", quiet: true
+  browserSync.notify messages.jekyllBuild
+
+gulp.task "jekyll-build",
+  shell.task "jekyll build"
+
+gulp.task "jekyll-rebuild", ["jekyll-serve"], ->
+  browserSync.reload()
+
+gulp.task "doctor",
+  shell.task "jekyll doctor"
+
+gulp.task "sass", ["lintSass"], ->
+  gulp.src("#{paths.sass}/*.scss")
     .pipe sass
       errLogToConsole: true
-      outputStyle: "compressed"
       precision: 2
-    .pipe prefix(["last 15 versions", "> 1%", "ie 9"], cascade: true)
-    .pipe gulp.dest("./build/css")
+    .pipe prefix ["last 2 versions", "> 2%", "ie 11", "Firefox ESR"], cascade: false
+    .pipe mediaQueries()
+    .pipe gulp.dest(paths.destinationStyles)
+    .pipe gulp.dest(paths.styles)
     .pipe browserSync.reload(stream: true)
+
+gulp.task "minifyCSS", ->
+  gulp.src("#{paths.destinationStyles}/*.css")
+    .pipe cache paths.styles
+    .pipe minifyCSS()
+    .pipe gulp.dest(paths.destinationStyles)
+    .pipe gulp.dest(paths.styles)
+
+gulp.task "lintSass", ->
+  gulp.src("#{paths.sass}/*.scss")
+    .pipe cache paths.sass
+    .pipe scssLint
+      "config": ".scss-lint.yml",
+      "bundleExec": true
+    .pipe scssLint.failReporter()
+    .on "error", (error) -> gutil.log(error.message)
 
 gulp.task "coffee", ->
-  gulp.src "./coffeescript/*.coffee"
+  gulp.src("#{paths.coffee}/*.coffee")
+    .pipe cache paths.coffee
     .pipe coffee bare: true
     .on "error", (error) -> gutil.log(error.message)
-    .pipe gulp.dest("./build/javascript")
+    .pipe gulp.dest(paths.destinationScripts)
+    .pipe gulp.dest(paths.scripts)
     .pipe browserSync.reload(stream: true)
 
-gulp.task "minify-html", ->
-  gulp.src "./build/**/*.html"
-    .pipe minifyHTML()
-    .pipe gulp.dest "./build/"
+gulp.task "minifyJS", ->
+  gulp.src("#{paths.destinationScripts}/*.js")
+    .pipe cache paths.scripts
+    .pipe minifyJS()
+    .pipe gulp.dest(paths.destinationScripts)
+    .pipe gulp.dest(paths.scripts)
 
 gulp.task "browser-sync", ->
   browserSync.init null,
     server:
-      baseDir: "./build"
+      baseDir: "_site"
     host: "localhost"
+    port: 4000
     open: true
     browser: "chrome"

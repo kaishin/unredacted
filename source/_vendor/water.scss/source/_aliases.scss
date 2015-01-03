@@ -1,0 +1,6 @@
+/// @requires wtr-size
+/// @alias wtr-size
+
+@mixin size($arguments...) {
+  @include wtr-size($arguments...);
+}

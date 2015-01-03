@@ -1,0 +1,37 @@
+{
+  "name": "water.scss",
+  "homepage": "https://github.com/kaishin/water.scss",
+  "authors": [
+    "Reda Lemeden <hello@redalemeden.com>"
+  ],
+  "description": "A Sass micro-library",
+  "main": "source/_water.scss",
+  "keywords": [
+    "css",
+    "mixins",
+    "sass",
+    "scss",
+    "library"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "spec",
+    "lib",
+    "tests",
+    "Gemfile",
+    "Gemfile.lock",
+    "README.md"
+  ],
+  "version": "0.1.2",
+  "_release": "0.1.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.1.2",
+    "commit": "10afe9c4c5ed953c98308d389a378db13a5e0e78"
+  },
+  "_source": "git://github.com/kaishin/water.scss.git",
+  "_target": "~0.1.2",
+  "_originalSource": "water.scss"
+}
