@@ -18,8 +18,11 @@
   </head>
 
   <body>
+    {{> "header" }}
     {{# block "main"}}
-      {{{ contents }}}
+      <main data-role="container">
+        {{{ contents }}}
+      </main>
     {{/ block}}
     {{#each collections.posts}}
     {{/each}}

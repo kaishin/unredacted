@@ -1,1 +1,8 @@
 @import "normalize";
+@import "header";
+@import "typography";
+
+[data-role=container] {
+  max-width: 40rem;
+  margin: 0 auto;
+}

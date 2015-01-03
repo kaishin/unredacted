@@ -67,6 +67,7 @@ gulp.task "blog", ->
       partials:
         index: "index"
         typekit: "partials/typekit"
+        header: "partials/header"
     .use feed
       collection: "posts"
     .build (error) ->
@@ -106,3 +107,4 @@ gulp.task "browser-sync", ->
       baseDir: "./build"
     host: "localhost"
     open: true
+    browser: "chrome"
