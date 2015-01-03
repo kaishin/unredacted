@@ -3,6 +3,12 @@ source: source
 title: Unredacted
 description: Thoughts and opinions of a software designer.
 tagline: Email the author.
+keywords:
+  - Reda
+  - Lemeden
+  - unredacted
+  - design
+  - kaishin
 baseurl: ""
 
 url: http://unredacted.redalemeden.com
