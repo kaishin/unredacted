@@ -1,2 +1,9 @@
 @import "vendor";
 @import "syntax";
+@import "typography";
+@import "header";
+
+[data-role=container] {
+  margin: 0 auto;
+  max-width: 40rem;
+}

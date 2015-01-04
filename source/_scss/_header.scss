@@ -1,0 +1,25 @@
+header {
+  padding: 2rem 0;
+}
+
+.logotype {
+  $gap: 1em;
+  background: #000;
+  border-radius: 4px;
+  color: #fff;
+  display: inline-block;
+  font-weight: 200;
+  margin-bottom: 0;
+  margin-left: -$gap;
+  padding-left: $gap;
+  padding-right: $gap;
+  position: relative;
+  text-transform: lowercase;
+}
+
+.headline {
+  color: #808080;
+  font-size: 1em;
+  font-weight: 200;
+  margin-top: 0.2em;
+}
