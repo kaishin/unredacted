@@ -75,4 +75,5 @@ DEPENDENCIES
   jekyll (~> 2.5.3)
   kramdown (~> 1.5.0)
   rouge (~> 1.7.7)
+  sass (~> 3.4.9)
   scss-lint (~> 0.31.0)

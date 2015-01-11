@@ -9,7 +9,7 @@ minifyCSS = require "gulp-minify-css"
 minifyJS = require "gulp-uglify"
 prefix = require "gulp-autoprefixer"
 runSequence = require "run-sequence"
-sass = require "gulp-sass"
+sass = require "gulp-ruby-sass"
 scssLint = require "gulp-scss-lint"
 shell = require "gulp-shell"
 
@@ -60,8 +60,10 @@ gulp.task "doctor",
 gulp.task "sass", ->
   gulp.src("#{paths.sass}/*.scss")
     .pipe sass
-      errLogToConsole: true
+      style: "compact"
       precision: 2
+      bundleExec: true
+    .on "error", (error) -> gutil.log(error.message)
     .pipe prefix ["last 2 versions", "> 2%", "ie 11", "Firefox ESR"], cascade: false
     .pipe mediaQueries()
     .pipe gulp.dest(paths.destinationStyles)
