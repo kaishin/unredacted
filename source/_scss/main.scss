@@ -1,9 +1,16 @@
 @import "vendor";
+@import "variables";
 @import "syntax";
 @import "typography";
 @import "header";
+@import "post-list";
 
 [data-role=container] {
   margin: 0 auto;
-  max-width: 40rem;
+  max-width: $container-width;
+  padding: 0 1rem;
+
+  @include media-width(from, $container-width) {
+    padding: 0;
+  }
 }
