@@ -24,12 +24,12 @@
     "Gemfile.lock",
     "README.md"
   ],
-  "version": "0.1.2",
-  "_release": "0.1.2",
+  "version": "0.1.3",
+  "_release": "0.1.3",
   "_resolution": {
     "type": "version",
-    "tag": "v0.1.2",
-    "commit": "10afe9c4c5ed953c98308d389a378db13a5e0e78"
+    "tag": "v0.1.3",
+    "commit": "61309733f60ad3711268d5454583b5623aa61de2"
   },
   "_source": "git://github.com/kaishin/water.scss.git",
   "_target": "~0.1.2",
