@@ -60,7 +60,7 @@ gulp.task "doctor",
 gulp.task "sass", ->
   gulp.src("#{paths.sass}/*.scss")
     .pipe sass
-      style: "compact"
+      style: "compressed"
       precision: 2
       bundleExec: true
     .on "error", (error) -> gutil.log(error.message)
