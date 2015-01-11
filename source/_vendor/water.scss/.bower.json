@@ -22,14 +22,18 @@
     "tests",
     "Gemfile",
     "Gemfile.lock",
-    "README.md"
+    "gulp.js",
+    "gulpfile.coffee",
+    "package.json",
+    "README.md",
+    "templates"
   ],
-  "version": "0.1.3",
-  "_release": "0.1.3",
+  "version": "0.1.5",
+  "_release": "0.1.5",
   "_resolution": {
     "type": "version",
-    "tag": "v0.1.3",
-    "commit": "61309733f60ad3711268d5454583b5623aa61de2"
+    "tag": "v0.1.5",
+    "commit": "fad59c0628d2ccc7a3b7029de4ea72919ae20a27"
   },
   "_source": "git://github.com/kaishin/water.scss.git",
   "_target": "~0.1.2",
