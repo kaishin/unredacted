@@ -18,6 +18,8 @@ future: false
 show_drafts: false
 lsi: true
 limit_posts: 0
+paginate: 5
+paginate_path: "/page-:num"
 
 author:
   name: Reda Lemeden
