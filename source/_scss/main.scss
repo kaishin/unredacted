@@ -5,6 +5,8 @@
 @import "header";
 @import "post-list";
 
+@import "includes/post-summary";
+
 [data-role=container] {
   margin: 0 auto;
   max-width: $container-width;
