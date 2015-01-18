@@ -20,6 +20,8 @@ lsi: true
 limit_posts: 0
 paginate: 5
 paginate_path: "/page-:num"
+reading_time: true
+wpm: 200
 
 author:
   name: Reda Lemeden

@@ -1,13 +1,8 @@
 ---
-
 date: 2012-02-13 08:38:51
 slug: ui-showdown
-title: "UI Showdown Reloaded: Tweetbot 2 vs. Twitter 4 vs. Twitterrific 4"
-
-excerpt: An update to the original showdown pitting the user interfaces of Tweetbot 1.0 and Twitter for iPhone using a simplified GOMS model.
-
-description: An update to the original showdown pitting the user interfaces of Tweetbot 1.0 and Twitter for iPhone using a simplified GOMS model.
-
+title: "Twitter Client Showdown: Reloaded"
+description: "An update to the original showdown pitting the user interfaces of Tweetbot 1.0 and Twitter for iPhone using a simplified GOMS model."
 ---
 
 It has been almost 10 months since the [original](http://kaishinlab.com/2011/04/tweetbot-vs-twitter/) showdown pitting the user interfaces of Tweetbot 1.0 and Twitter for iPhone. An update was long due and last week's milestone update of Tweetbot leaves me with no excuses.

@@ -1,0 +1,11 @@
+%skewed {
+  &:before {
+    content: "";
+    display: block;
+    height: 1.45em;
+    position: absolute;
+    transform: skew($skew-degree * -1);
+    width: 100%;
+    z-index: -1;
+  }
+}

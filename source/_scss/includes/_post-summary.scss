@@ -1,2 +1,48 @@
-.post-summary {
+.post-link {
+  &, &:link, &:visited {
+    color: $black;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: $link-hover-color;
+  }
+}
+
+.post-title {
+  margin: 0.2em 0 0;
+}
+
+.post-category {
+  @extend %skewed;
+  background: $ash;
+  position: relative;
+  padding: 0 0.5em;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 0.8em;
+
+  &:before {
+    $gap: 5%;
+    background: $ash;
+    height: 1.8em;
+    left: $gap * -1;
+    width: 100% + ($gap * 2);
+  }
+}
+
+.post-metadata {
+  color: $gray;
+  font-weight: 300;
+  font-size: 0.9em;
+
+  [datetime] {
+    margin-right: 0.4em;
+  }
+
+  [role=img] {
+    display: inline-block;
+    width: 2.5rem;
+    margin-bottom: 0.08em;
+  }
 }
