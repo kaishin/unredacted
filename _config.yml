@@ -1,5 +1,3 @@
-source: source
-
 title: Unredacted
 description: Thoughts and opinions of a software designer.
 tagline: Email the author.
@@ -16,7 +14,6 @@ google_verification: ""
 url: http://unredacted.redalemeden.com
 future: false
 show_drafts: false
-lsi: true
 limit_posts: 0
 paginate: 5
 paginate_path: "/page-:num"
