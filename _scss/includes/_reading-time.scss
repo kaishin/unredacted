@@ -10,8 +10,8 @@
   }
 }
 
-$fill-color: lighten($mauve, 20%);
-$unfill-color: $ash;
+$fill-color: lighten($mauve, 10%);
+$unfill-color: darken($ash, 5%);
 
 [data-reading-time] {
   fill: $fill-color;
