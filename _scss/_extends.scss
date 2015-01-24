@@ -32,3 +32,15 @@
     background-color: $link-active-color;
   }
 }
+
+%container {
+  margin: 0 auto;
+  max-width: $container-width;
+  padding-left: $container-padding;
+  padding-right: $container-padding;
+
+  @include media-width(from, $container-breakpoint) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

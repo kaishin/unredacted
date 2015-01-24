@@ -1,0 +1,21 @@
+a {
+  text-decoration: none;
+  transition: color 0.2s;
+
+  &:link {
+    color: $link-color;
+  }
+
+  &:visited {
+    color: $link-visited-color;
+  }
+
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: $link-active-color;
+  }
+}
