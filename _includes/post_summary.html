@@ -4,11 +4,13 @@
       {{ post.category }}
     </span>
   {% endif %}
+
   <h2 class="post-title">
     <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
       {{ post.title }}
     </a>
   </h2>
+
   <div class="post-metadata">
     {% assign reading_time = post.content | strip_html | number_of_words | divided_by: site.wpm %}
     <time datetime="{{ post.date | date_to_xmlschema }}">
@@ -17,5 +19,6 @@
 
     {% include reading_time.html reading_time=reading_time %}
   </div>
+
   {{ post.excerpt }}
 </article>
