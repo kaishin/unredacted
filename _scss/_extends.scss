@@ -2,10 +2,24 @@
   &:before {
     content: "";
     display: block;
-    height: 1.45em;
+    height: $skewed-pseudo-height;
+    left: 0;
     position: absolute;
     transform: skew($skew-degree * -1);
     width: 100%;
     z-index: -1;
+  }
+}
+
+%button {
+  @extend %skewed;
+  padding: 0 1em;
+  position: relative;
+  text-align: center;
+
+  &:before {
+    height: $skewed-pseudo-height * 4/3;
+    top: $skewed-pseudo-height * -1/6;
+    transition: background-color 0.2s;
   }
 }

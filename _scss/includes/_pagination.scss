@@ -1,0 +1,42 @@
+.pagination {
+  list-style: none;
+  margin: 0;
+  overflow: auto;
+  padding: 2em 0;
+}
+
+[class*=page-link] {
+  @extend %button;
+  font-weight: 100;
+
+  @include link {
+    color: $white;
+    text-decoration: none;
+  }
+
+  &:hover::before {
+    background-color: $link-hover-color;
+  }
+
+  &:active::before {
+    background-color: $link-active-color;
+  }
+
+  &::before {
+    background-color: $mauve;
+  }
+}
+
+.next-page-link {
+  float: right;
+  margin-right: 0.12em;
+}
+
+.previous-page-link {
+  float: left;
+  margin-left: 0.12em;
+
+  &:before {
+    transform: skew($skew-degree);
+  }
+}

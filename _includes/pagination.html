@@ -3,13 +3,13 @@
   <ul class="pagination">
     {% if paginator.previous_page %}
     <li>
-      <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+      <a class="previous-page-link" aria-label="previous page" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&#65308;</a>
     </li>
     {% endif %}
 
     {% if paginator.next_page %}
     <li>
-      <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+      <a class="next-page-link" aria-label="next page" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&#65310;</a>
     </li>
     {% endif %}
   </ul>

@@ -5,9 +5,11 @@
 @import "header";
 @import "post-list";
 @import "extends";
+@import "mixins";
 
 @import "includes/post-summary";
 @import "includes/reading-time";
+@import "includes/pagination";
 
 [data-role=container] {
   margin: 0 auto;

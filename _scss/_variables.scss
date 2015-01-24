@@ -12,3 +12,5 @@ $link-color: $ashtray;
 $link-visited-color: adjust-hue($mauve, -20deg);
 $link-hover-color: mix(adjust-hue($mauve, -20deg), $ashtray);
 $link-active-color: $mauve;
+
+$skewed-pseudo-height: 1.45em;
