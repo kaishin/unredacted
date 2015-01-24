@@ -1,3 +1,5 @@
+$margin: 0.14em;
+
 .pagination {
   list-style: none;
   margin: 0;
@@ -8,14 +10,8 @@
 [class*=page-link] {
   @extend %button;
   font-weight: 100;
-
-  @include link {
-    color: $white;
-    text-decoration: none;
-  }
 }
 
-$margin: 0.14em;
 .next-page-link {
   float: right;
   margin-right: $margin;

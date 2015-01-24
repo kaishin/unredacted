@@ -18,7 +18,7 @@ article[class*=post] {
   }
 
   img {
-    border-radius: 4px;
+    border-radius: $border-radius;
     border: 1px solid rgb(237, 237, 237);
     margin-left: $image-outdent * -1;
     max-width: 100% + ($image-outdent * 2);
@@ -28,5 +28,21 @@ article[class*=post] {
 .post-content {
   a {
     text-decoration: underline;
+
+    &:link {
+      color: $link-color;
+    }
+
+    &:visited {
+      color: $link-visited-color;
+    }
+
+    &:hover {
+      color: $link-hover-color;
+    }
+
+    &:active {
+      color: $link-active-color;
+    }
   }
 }

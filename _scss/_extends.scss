@@ -13,23 +13,37 @@
 
 %button {
   @extend %skewed;
+  color: $link-color;
   padding: 0 1em;
   position: relative;
   text-align: center;
+  text-decoration: none;
 
   &::before {
+    border-radius: $border-radius;
+    background-color: $white;
+    box-shadow: inset 0 0 0 1px $link-color;
     height: $skewed-pseudo-height * 4/3;
     top: $skewed-pseudo-height * -1/6;
-    transition: background-color 0.2s;
-    background-color: $link-color;
+    transition: all 0.1s;
   }
 
-  &:hover::before {
-    background-color: $link-hover-color;
+  &:hover {
+    color: $white;
+
+    &::before {
+      background-color: $link-hover-color;
+      box-shadow: inset 0 0 0 1px $link-hover-color;
+    }
   }
 
-  &:active::before {
-    background-color: $link-active-color;
+  &:active {
+    color: $white;
+
+    &::before {
+      background-color: $link-active-color;
+      box-shadow: inset 0 0 0 1px $link-active-color;
+    }
   }
 }
 
