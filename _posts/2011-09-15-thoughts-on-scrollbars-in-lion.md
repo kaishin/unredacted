@@ -1,14 +1,17 @@
 ---
 date: 2011-09-15 01:42:37
 slug: thoughts-on-scrollbars-in-lion
-title: Thoughts on Scrollbars in Lion
+title: "Thoughts on Scrollbars in Lion"
+category: osx
 tags:
-  - scrolling
+  - interaction
+  - OSX Lion
+  - Scroll bars
 ---
 
 Is it only me or is everyone whining about the 'peekaboo' scrollbars in Lion? Much like the [skeuomorph controversy](http://kaishinlab.com/2011/07/skeuomorphism-in-ui-design/), there seems to be a sweeping consensus that the iOS-inspired appearance and behavior of scrollbars account for a significant usability handicap that should be addressed in one [way](http://jonwhipple.com/blog/2011/07/29/improving-the-scrolling-experience-in-lion/) or [another](http://holdingpattern.posterous.com/musings-on-lion-scrollbar-alternatives). They argue that the main culprit is the loss of information stemming from the contextual disappearance of scrollbars.
 
-[![Scrollbar in Lion](http://kaishinlab.com/wp-content/uploads/images/lion-scrollbars.jpg)](http://kaishinlab.com/wp-content/uploads/images/lion-scrollbars.jpg)
+[![Scrollbar in Lion](/images/lion-scrollbars.jpg)](/images/lion-scrollbars.jpg)
 
 In the lack of any theoretical or experimental evidence coming to their defense, these claims are speculative at best. Trying so religiously to solve a problem that doesn't exist in the first place is a complete waste of time and talent.
 

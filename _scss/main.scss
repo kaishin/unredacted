@@ -7,16 +7,17 @@
 @import "extends";
 @import "mixins";
 
+@import "includes/pagination";
+@import "includes/post";
 @import "includes/post-summary";
 @import "includes/reading-time";
-@import "includes/pagination";
 
 [data-role=container] {
   margin: 0 auto;
   max-width: $container-width;
-  padding: 0 1rem;
+  padding: 0 $container-padding;
 
-  @include media-width(from, $container-width) {
+  @include media-width(from, $container-breakpoint) {
     padding: 0;
   }
 }

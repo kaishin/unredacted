@@ -1,0 +1,25 @@
+article[class*=post] {
+  $image-outdent: 5%;
+
+  img,
+  figure {
+    $margin: 1em;
+    border-radius: 4px;
+    border: 1px solid rgb(237, 237, 237);
+    margin-bottom: $margin;
+    margin-left: $image-outdent * -1;
+    margin-top: $margin;
+    max-width: 100% + ($image-outdent * 2);
+
+    @include media-width(from, $container-breakpoint) {
+      margin-top: $margin * 2;
+      margin-bottom: $margin * 2;
+    }
+  }
+}
+
+.post-content {
+  a {
+    text-decoration: underline;
+  }
+}

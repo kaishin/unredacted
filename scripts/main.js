@@ -1,1 +1,1 @@
-$(function(){return $("time").each(function(){var t;return t=$(this).attr("datetime"),$(this).html(moment(t).fromNow())})});
+$(function(){return $(".post-summary time").each(function(){var t;return t=$(this).attr("datetime"),$(this).html(moment(t).fromNow())})});
