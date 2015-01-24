@@ -1,6 +1,5 @@
 ---
 date: 2011-09-15 01:42:37
-slug: thoughts-on-scrollbars-in-lion
 title: "Thoughts on Scrollbars in Lion"
 category: osx
 tags:
