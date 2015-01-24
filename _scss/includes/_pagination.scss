@@ -13,28 +13,17 @@
     color: $white;
     text-decoration: none;
   }
-
-  &:hover::before {
-    background-color: $link-hover-color;
-  }
-
-  &:active::before {
-    background-color: $link-active-color;
-  }
-
-  &::before {
-    background-color: $mauve;
-  }
 }
 
+$margin: 0.14em;
 .next-page-link {
   float: right;
-  margin-right: 0.12em;
+  margin-right: $margin;
 }
 
 .previous-page-link {
   float: left;
-  margin-left: 0.12em;
+  margin-left: $margin;
 
   &:before {
     transform: skew($skew-degree);

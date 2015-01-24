@@ -17,9 +17,18 @@
   position: relative;
   text-align: center;
 
-  &:before {
+  &::before {
     height: $skewed-pseudo-height * 4/3;
     top: $skewed-pseudo-height * -1/6;
     transition: background-color 0.2s;
+    background-color: $link-color;
+  }
+
+  &:hover::before {
+    background-color: $link-hover-color;
+  }
+
+  &:active::before {
+    background-color: $link-active-color;
   }
 }
