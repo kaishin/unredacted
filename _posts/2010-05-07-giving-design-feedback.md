@@ -1,35 +1,30 @@
 ---
 date: 2010-05-07 20:52:46
-title: "Five Things to Avoid When Giving Design Feedback"
-slug: giving-design-feedback
+title: "On Design Feedback"
+category: opinion
 tags:
   - design
-  - client
-  - profession
+  - industry
 ---
 
-It would be hard to argue that there is no place for subjectivity in design. Unfortunately, this is the very reason that makes giving constructive design feedback a daunting challenge. Add to this the fact that not all of us are designers: sometimes you feel that something is wrong, but you can't explicitly describe it, let alone conveying it to others.
+There is no point in arguing that subjectivity has no place in design. This simple fact makes giving constructive design feedback a lifelong challenge, especially when one of the parties involved is not a designer by profession.
 
-Needless to say, failing to provide constructive feedback makes things a tad harder for both parties. For better results, here are five things to avoid when criticizing design:
+It goes without saying that failure to give constructive feedback slows down the design process and might ultimately veer it to the wrong direction. To avoid that, it is the responsibility of both parties to make sure they are fulfilling their ends of the deal.
 
-### 1. Vague statements
+Those in a position to *give* design feedback should:
 
-Avoid generic sentences that are too vague to communicate anything to the designer. Something in the lines of 'It looks horrible', 'It's off the mark' etc won't cut it. They just end up confusing the designer and delaying the project. Make an effort pinpointing what bothers you, even when you lack the jargon to clearly express it.
+- **Avoid generic adjectives.** Examples include "good", "bad", "awesome", "meh", etc. Better yet, avoid *all* adjectives.
 
-### 2. Personal tastes
+- **Avoid appreciation verbs.** Examples include "like", "love", "hate", etc.
 
-_Never ever_ criticize design based on your personal tastes; bringing personal tastes and preferences into play is highly counter-productive. Always refer the project brief and consult with your designer to make sure that everything sticks to the guidelines.
+- **Ask questions**. Understanding the thought process of the designer is key to assess the proposed solution.
 
-### 3. Uninformed criticism
+- **Refrain from offering solutions**. Let the designer do his work.
 
-Before voicing your opinion, always ask for the _Why_. Judging design without seeking to understand the brainwork underlying it is plain amateurish. Mutual understanding is key.
+Designers *receiving* design feedback should:
 
-### 4. I-can-design-too attitude
+- **Avoid taking things personally**. All criticism should be funneled through the work.
 
-Do not underestimate design. I know you can use Photoshop. I know you had already made a website or a logo for your college Art club. But let's be honest: If you know that much about design, you wouldn't be seeking the expertise of a designer in the first place. And even if you _do_ really know about design, do not get too cocky, as this won't make things any easier.
+- **Ask questions**. Questions that help turn feedback into problem statements.
 
-### 5. Superfluous comparison
-
-Do not try to constantly compare the work at hand with what you have seen elsewhere. External references should be used moderately, as every project is unique.  Also, do not bring the argument of _best practices_, as there aren't any.
-
-A problem well defined is a problem -mostly- solved. And when it comes to design, defining the problem can be the most difficult part. Let's not make it any harder.
+- **Listen.** And then listen some more.

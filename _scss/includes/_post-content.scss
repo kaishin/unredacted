@@ -23,6 +23,10 @@ article[class*=post] {
     margin-left: $image-outdent * -1;
     max-width: 100% + ($image-outdent * 2);
   }
+
+  strong {
+    font-weight: 500;
+  }
 }
 
 .post-content {
