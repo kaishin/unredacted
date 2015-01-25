@@ -1,3 +1,7 @@
+{% if reading_time == 0 %}
+  {% assign reading_time = reading_time | plus: 1 %}
+{% endif %}
+
 {% capture label %}{{ reading_time }} minute{% if reading_time > 1 %}s{% endif %}{% endcapture %}
 
 <span class="reading-time">
