@@ -23,7 +23,7 @@ header {
   z-index: 10;
 
   &:before {
-    background: $black;
+    background-color: $black;
     left: 0;
     transition: transform 0.2s;
     width: 100%;
@@ -36,22 +36,23 @@ header {
   }
 
   &:hover {
-    color: transparent;
     text-decoration: none;
 
     &:before {
       transform: skew($skew-degree);
+      background-color: $link-hover-color;
     }
   }
 }
 
-.logotype-link-text {
-  background: $black;
-}
-
 .headline {
-  color: #808080;
+  color: $gray;
   font-size: 1em;
   font-weight: 200;
-  margin-top: 0.2em;
+  margin-top: 0.5em;
+
+  a {
+    color: $black;
+    font-weight: 400;
+  }
 }

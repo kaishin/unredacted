@@ -10,7 +10,7 @@
   }
 }
 
-$fill-color: lighten($mauve, 10%);
+$fill-color: $link-color;
 $unfill-color: darken($ash, 5%);
 
 [data-reading-time] {
