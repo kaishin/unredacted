@@ -11,10 +11,11 @@
 }
 
 $fill-color: $link-color;
-$unfill-color: darken($ash, 5%);
+$unfill-color: $tertiary-color;
 
 [data-reading-time] {
   fill: $fill-color;
+  margin-left: 0.2em;
 }
 
 %data-reading-tiny {

@@ -2,26 +2,38 @@
 layout: default
 ---
 <article class="post">
-  <h1 class="post-title">
-    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
-      {{ page.title }}
-    </a>
-  </h1>
+  <header class="post-header">
+    <div class="post-taxonomy">
+      <span class="post-category">
+        {{ page.category }}
+      </span>
 
-  <div class="post-metadata">
-    {% assign reading_time = page.content | strip_html | number_of_words | divided_by: site.wpm %}
-    <time datetime="{{ page.date | data_to_xmlschema }}">
-    {{ page.date | date: "%R %b %-d, %Y" }}
-    </time>
-    <span class="reading-time">
-    &mdash; {{ reading_time }} minute{% if reading_time > 1 %}s{% endif %} read
-    </span>
-    {% if page.category %}
-    <span class="category">
-    &mdash; {{ page.category }}
-    </span>
-    {% endif %}
-  </div>
+      <ul class="metadata-tag-list">
+        {% for tag in page.tags %}
+        <li class="tag-label">
+          {{ tag }}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <h1 class="post-title">
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+        {{ page.title }}
+      </a>
+    </h1>
+
+    <div class="post-metadata">
+      <time datetime="{{ page.date | data_to_xmlschema }}">
+        {{ page.date | date: "%R %b %-d, %Y" }}
+      </time>
+
+      <span class="separator">&mdash;</span>
+
+      {% assign reading_time = page.content | strip_html | number_of_words | divided_by: site.wpm %}
+      {% include reading_time.html reading_time=reading_time %}
+    </div>
+  </header>
 
   <section class="post-content">
     {{ content }}

@@ -1,9 +1,7 @@
 <article class="post-summary">
-  {% if post.category %}
-    <span class="post-category">
-      {{ post.category }}
-    </span>
-  {% endif %}
+  <span class="post-category">
+    {{ post.category }}
+  </span>
 
   <h2 class="post-title">
     <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
@@ -12,11 +10,13 @@
   </h2>
 
   <div class="post-metadata">
-    {% assign reading_time = post.content | strip_html | number_of_words | divided_by: site.wpm %}
     <time datetime="{{ post.date | date_to_xmlschema }}">
     {{ post.date | date: "%b %-d, %Y" }}
     </time>
 
+    <span class="separator">&mdash;</span>
+
+    {% assign reading_time = post.content | strip_html | number_of_words | divided_by: site.wpm %}
     {% include reading_time.html reading_time=reading_time %}
   </div>
 
