@@ -27,7 +27,17 @@ article[class*=post] {
 
 .post-content {
   a {
-    text-decoration: underline;
+    font-style: italic;
+
+    &:active {
+      color: $link-active-color;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      color: $link-hover-color;
+    }
 
     &:link {
       color: $link-color;
@@ -35,14 +45,6 @@ article[class*=post] {
 
     &:visited {
       color: $link-visited-color;
-    }
-
-    &:hover {
-      color: $link-hover-color;
-    }
-
-    &:active {
-      color: $link-active-color;
     }
   }
 }

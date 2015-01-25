@@ -19,13 +19,12 @@ header {
   padding-right: $gap;
   position: relative;
   text-transform: lowercase;
-  transition: color 0.2s;
+  transition: all 0.2s;
   z-index: 10;
 
   &:before {
     background-color: $black;
     left: 0;
-    transition: transform 0.2s;
     width: 100%;
   }
 
@@ -37,9 +36,9 @@ header {
 
   &:hover {
     text-decoration: none;
+    transform: translate(0.5em);
 
     &:before {
-      transform: skew($skew-degree);
       background-color: $link-hover-color;
     }
   }
