@@ -33,7 +33,7 @@ paths =
     "#{sourceFolder}/**/*.yml",
     "#{sourceFolder}/**/*.xml",
     "!#{sourceFolder}/node_modules/**/*",
-    "!#{sourceFolder}/_site/**/*"
+    "!#{destinantionFolder}/**/*"
   ]
 
 gulp.task "default", ["develop"]
