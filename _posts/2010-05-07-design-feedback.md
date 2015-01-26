@@ -1,7 +1,7 @@
 ---
 date: 2010-05-07 20:52:46
 title: "On Design Feedback"
-category: opinion
+category: tip
 tags:
   - design
   - industry
