@@ -13,19 +13,25 @@ article[class*=post] {
   figcaption {
     color: $gray;
     font-size: 0.85rem;
-    font-style: italic;;
+    font-style: italic;
     font-weight: 100;
+    margin-top: 0.5em;
   }
 
   img {
     border-radius: $border-radius;
-    border: 1px solid rgb(237, 237, 237);
+    box-shadow: 0 0 0 1px rgba($black , 0.05);
     margin-left: $image-outdent * -1;
     max-width: 100% + ($image-outdent * 2);
   }
 
   strong {
     font-weight: 500;
+  }
+
+  ul,
+  ol {
+    padding: 0;
   }
 }
 
