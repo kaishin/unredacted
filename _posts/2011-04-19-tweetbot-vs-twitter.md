@@ -1,10 +1,10 @@
 ---
 date: "2011-04-19 14:56:20"
-title: "Tweetbot vs. Twitter for iOS"
+title: "Showdown: Tweetbot vs. Twitter for iPhone"
 category: research
 tags:
-  - interaction
-  - goms
+  - interactions
+  - usability
 ---
 
 Amidst the noise surrounding Twitter's new third party restrictions, [Tweetbot]---the long-awaited Twitter client from Tapbots---is finally out for iPhone and iPod Touch. The overwhelmingly positive feedback is a clear sign that the app met and even exceeded expectations.
@@ -30,7 +30,7 @@ Before jumping in, let's introduce some of the concepts used in this model:
 The values assigned to each interaction are as follows:
 
 | Interaction | Value
-|-|-:|
+|-|:-:|
 | Tap | 1
 | Double tap | 1.5 |
 | Swipe | 1.5 |
@@ -44,7 +44,7 @@ Thinking time was assigned a value of `0.5`, and will be referred to as MOP (mul
 We'll start by having a look at how efficiently the two clients handle basic tasks such as tweeting and replying:
 
 | Task | Tweetbot | Official
-|-|:-|:-|
+|-|:-:|:-:|
 | Send a Tweet<sup>1</sup> | 2 | 2 |
 | Reply<sup>1 2</sup>  | 3 | 4 |
 | Retweet (native) | 4 | 4.5 |
@@ -66,12 +66,12 @@ The two clients are equally efficient when it comes to tweeting and retweeting. 
 Let's now spice up the comparison with some hashtags and @ mentions:
 
 | Task | Tweetbot | Official
-|-|:-|:-|
+|-|:-:|:-:|
 | Compose a tweet with # and @ | 7 | 4 |
 | Compose a tweet with 3 # and 2 @ | 15 | 7 |
 | View conversations<sup>1</sup> | 1.5 | 2 |
 | Reply all (MMT)<sup>2</sup> | 4.5 | 5 |
-| Reply single (MMT) <sup>2</sup> | 4.5 | 4 |
+| Reply single (MMT)<sup>2</sup> | 4.5 | 4 |
 
 1. Where the user takes part
 2. Multi-mention tweet
@@ -87,11 +87,11 @@ Thanks to shortcuts, the official Twitter client trumps Tweetbot when it comes t
 Now for the less frequent tasks:
 
 | Task | Tweetbot | Official
-|-|:-|:-|
+|-|:-:|:-:|
 | Follow / Unfollow | 3.5 | 5 |
 | Report a user |5 | 8 |
 | Translate a tweet | 4.5 | 5 |
-| Favorite a tweet to Favorites | 2.5 | 3 |
+| Favorite a tweet | 2.5 | 3 |
 | Delete a tweet | 3.5 | 4 |
 | Switch time-lines | 2.5 | 3 |
 
@@ -104,7 +104,7 @@ The official client didn't stand a chance here; Tweetbot's long tap is a godsend
 ### Results
 
 | Task | Tweetbot | Official
-|-|:-|:-|
+|-|:-:|:-:|
 | Total | 71 | 68 |
 
 The relatively awkward, albeit native, method of keying hashtags and @ mentions in Tweetbot skews the results in favor of Twitter for iPhone. If it wasn't for this detail, the third party client would have come out ahead.
@@ -120,8 +120,6 @@ Notably, Tweetbot shines in some areas that would be hard to assess using the HI
 * Single swiping a tweet displays related tweets in a dedicated conversation view, even if the user is not taking part in them. There seems to be no way to do that in the official client.
 
 * Even though the visual style may not appeal to everyone, it provides a good balance of contrast between content and controls.
-
-### In a Nutshell
 
 For a 1.0 release, Tweetbot is doing a remarkable job, especially when considering the saturated and volatile market of Twitter third party clients. Even though there is still room for improvement in certain areas, Tweetbot for iPhone has got what it takes to dethrone the official client, and then some.
 
