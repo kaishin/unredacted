@@ -32,6 +32,7 @@ article[class*=post] {
   ul,
   ol {
     padding: 0;
+    list-style-type: none;
   }
 }
 
@@ -55,6 +56,21 @@ article[class*=post] {
 
     &:visited {
       color: $link-visited-color;
+    }
+  }
+
+  li {
+    position: relative;
+
+    &::before {
+      color: darken($ash, 20%);
+      content: "–";
+      left: -1em;
+      position: absolute;
+
+      @include media-width(from, $container-width) {
+        left: -1.2em;
+      }
     }
   }
 }
