@@ -1,7 +1,5 @@
 <article class="post-summary">
-  <span class="post-category">
-    {{ post.category }}
-  </span>
+  {% include post_category.html category=post.category %}
 
   <h2 class="post-title">
     <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">

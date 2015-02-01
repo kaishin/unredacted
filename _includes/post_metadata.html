@@ -5,10 +5,4 @@
 
   {% assign reading_time = page.content | strip_html | number_of_words | divided_by: site.wpm %}
   {% include reading_time.html reading_time=reading_time %}
-
-  {% if include.category %}
-    <span class="category">
-      &mdash; {{ page.category }}
-    </span>
-  {% endif %}
 </div>

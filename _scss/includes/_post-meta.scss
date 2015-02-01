@@ -2,36 +2,19 @@
   margin-bottom: 2rem;
 
   .post-title {
-    font-size: 1.8rem;
     margin-top: 0.5rem;
+
+    @include media-width(from, $container-breakpoint) {
+      font-size: 1.8rem;
+    }
   }
 }
 
-.post-taxonomy {
-  border-bottom: 1px solid $ash;
-  padding-bottom: 0.5em;
-}
 
-.post-category {
-  @extend %skewed;
-  background: $ash;
-  position: relative;
-  padding: 0 0.5em;
-  text-transform: uppercase;
-  font-weight: 300;
-  font-size: 0.8em;
-  margin-left: 0.4em;
-
-  &:before {
-    $gap: 5%;
-    background: $ash;
-    height: 1.8em;
-    left: $gap * -1;
-    width: 100% + ($gap * 2);
-  }
-}
 
 .post-title {
+  font-size: 1.4rem;
+  line-height: 1.3;
   margin: 0;
 }
 
@@ -51,10 +34,12 @@
 [class*=metadata] {
   color: $gray;
   font-weight: 300;
-  font-size: 0.9em;
+  font-size: 0.9rem;
 }
 
 .post-metadata {
+  margin-top: 0.2rem;
+
   [role=img] {
     display: inline-block;
     width: 2.5rem;
@@ -65,10 +50,7 @@
 [class*=tag-list] {
   display: inline-block;
   list-style: none;
-  margin-bottom: 0;
-  margin-left: 0.6rem;
-  margin-top: 0;
-  padding: 0;
+  margin: 0;
 }
 
 .tag-label {
