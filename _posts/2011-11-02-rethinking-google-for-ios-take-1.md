@@ -1,5 +1,5 @@
 ---
-date: 2011-11-02 02:18:53
+date: 2011-11-02 02:18:53 -0600
 slug: rethinking-google-for-ios-take-1
 title: "Rethinking Google+ for iOS: Take 1"
 tags:

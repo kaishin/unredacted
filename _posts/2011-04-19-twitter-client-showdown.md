@@ -1,9 +1,11 @@
 ---
-date: "2011-04-19 14:56:20"
-title: "Showdown: Tweetbot vs. Twitter for iPhone"
+date: 2011-04-19 14:56:20 +0200
+title: "Twitter Client Showdown"
 category: research
 tags:
   - interactions
+  - iOS
+  - mobile
   - usability
 ---
 
@@ -43,7 +45,7 @@ Thinking time was assigned a value of `0.5`, and will be referred to as MOP (mul
 
 We'll start by having a look at how efficiently the two clients handle basic tasks such as tweeting and replying:
 
-| Task | Tweetbot | Official
+| Task | Tweetbot | Twitter
 |-|:-:|:-:|
 | Send a Tweet<sup>1</sup> | 2 | 2 |
 | Reply<sup>1 2</sup>  | 3 | 4 |
@@ -65,7 +67,7 @@ The two clients are equally efficient when it comes to tweeting and retweeting. 
 
 Let's now spice up the comparison with some hashtags and @ mentions:
 
-| Task | Tweetbot | Official
+| Task | Tweetbot | Twitter
 |-|:-:|:-:|
 | Compose a tweet with # and @ | 7 | 4 |
 | Compose a tweet with 3 # and 2 @ | 15 | 7 |
@@ -86,7 +88,7 @@ Thanks to shortcuts, the official Twitter client trumps Tweetbot when it comes t
 
 Now for the less frequent tasks:
 
-| Task | Tweetbot | Official
+| Task | Tweetbot | Twitter
 |-|:-:|:-:|
 | Follow / Unfollow | 3.5 | 5 |
 | Report a user |5 | 8 |
@@ -103,7 +105,7 @@ The official client didn't stand a chance here; Tweetbot's long tap is a godsend
 
 ### Results
 
-| Task | Tweetbot | Official
+| Task | Tweetbot | Twitter
 |-|:-:|:-:|
 | Total | 71 | 68 |
 

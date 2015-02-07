@@ -1,5 +1,5 @@
 ---
-date: 2011-09-29 20:55:40
+date: 2011-09-29 20:55:40 +0000
 slug: text-editors-a-rant
 title: "Text Editors: A Rant"
 tags:

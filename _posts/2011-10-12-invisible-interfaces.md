@@ -1,5 +1,5 @@
 ---
-date: 2011-10-12 17:02:10
+date: 2011-10-12 17:02:10 +0000
 slug: invisible-interfaces
 title: "Invisible Interfaces"
 tags:

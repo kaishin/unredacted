@@ -1,5 +1,5 @@
 ---
-date: 2011-09-15 01:42:37
+date: 2011-09-15 01:42:37 +0000
 title: "Thoughts on Scrollbars in Lion"
 category: opinion
 tags:
