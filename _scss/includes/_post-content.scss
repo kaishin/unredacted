@@ -34,6 +34,13 @@ article[class*=post] {
     padding: 0;
     list-style-type: none;
   }
+
+  blockquote {
+    border-left: 2px solid $gray;
+    font-style: italic;
+    margin: 2em 0;
+    padding-left: 0.8em;
+  }
 }
 
 .post-content {
