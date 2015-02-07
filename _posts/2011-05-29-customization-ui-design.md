@@ -4,7 +4,8 @@ title: "The Pitfall of Customization in UI Design"
 category: Opinion
 tags:
   - customization
-  - UI
+  - interface
+  - design
 ---
 
 This might be purely anecdotal, but it feels to me that desingers and developers are increasinly resorting to customizable interfaces as a panacea for all interface ills. Arguably, the heterogeneity of user expectations takes the challenge of designing universal interfaces to a whole other level. Or does it?

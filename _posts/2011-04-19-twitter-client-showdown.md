@@ -4,7 +4,7 @@ title: "Twitter Client Showdown"
 category: research
 tags:
   - interactions
-  - iOS
+  - ios
   - mobile
   - usability
 ---
