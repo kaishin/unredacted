@@ -5,22 +5,23 @@ category: opinion
 tags:
   - interaction
   - interface
-  - mac
   - osx
 ---
 
-Is it only me or is everyone whining about the 'peekaboo' scrollbars in Lion? Much like the [skeuomorph controversy](http://kaishinlab.com/2011/07/skeuomorphism-in-ui-design/), there seems to be a sweeping consensus that the iOS-inspired appearance and behavior of scrollbars account for a significant usability handicap that should be addressed in one [way](http://jonwhipple.com/blog/2011/07/29/improving-the-scrolling-experience-in-lion/) or [another](http://holdingpattern.posterous.com/musings-on-lion-scrollbar-alternatives). They argue that the main culprit is the loss of information stemming from the contextual disappearance of scrollbars.
+Much like the [skeuomorph controversy]({% post_url 2011-07-29-skeuomorphism-in-ui-design %}), the iOS-inspired scrollbars in OS X Lion have been the topic of a heated debate in the Apple community. They have been [accused][siracusa] of causing a usability handicap by removing key information about the current state of the interface.
 
 {% include figure.html file="lion-scrollbars.jpg" alt="Scrollbars in Lion" caption="The look of scrollbars in OS X Lion." %}
 
-In the lack of any theoretical or experimental evidence coming to their defense, these claims are speculative at best. Trying so religiously to solve a problem that doesn't exist in the first place is a complete waste of time and talent.
+Scrollbars are first and foremost *controls*; they receive user input and instruct the view to move content accordingly. They also happen to visually inform users about the position of the visible area and how much of the overall content it covers. In his lengthy Lion [review][siracusa], Siracusa argues that Apple had to sacrifice the convenience of constantly displaying the foregoing visual cues for the sake of simplifying the interface and saving screen real estate.
 
-Scrollbars are first and foremost _controls_; they receive user input and instruct the view to move content accordingly. They also happen to visually inform users about the position of the visible area and how much of the overall content it stands for. In his lengthy Lion [review](http://arstechnica.com/apple/reviews/2011/07/mac-os-x-10-7.ars/3), Siracusa argues that Apple had to sacrifice the convenience of constantly displaying the foregoing visual cues for the sake of simplifying the interface and saving screen real estate.
+Like any design decision, Apple had to make a compromise. They based their decision on the premise that in most cases, the scrollbars are not likely to be in the user's [locus of attention][locus][^1]. Using screen real-estate to display non-critical information is nothing short of a hindrance and is against the [progressive disclosure] principle.
 
-Now let me ask you this, how many times do you find yourself gazing at the scrollbar when browsing a page or working on a word processor?
+The ensuing disappearance of any visual cues that hint at the presence of more content below the fold is also a false alarm. Getting immediate feedback from the content view is just one gesture away, and the carefully crafted bounce animations make the interface even more responsive.
 
-Apple made the right assumption that, unless we are scrolling, scrollbars are very likely to be outside our [locus of attention](http://www.usabilityfirst.com/glossary/locus-of-attention/) (Raskin 2000). In fact, even when scrolling, the odds that we shift our locus of attention to scrollbars are very weak; our main concern is displaying hidden content, making it ipso facto our locus of attention. Using up screen real-estate to constantly display non-critical data is nothing short of a hindrance. [Progressive disclosure](http://en.wikipedia.org/wiki/Progressive_disclosure) anyone?
+Users who relied heavily on scrollbars in Snow Leopard might be disoriented at first, but that is little to pay for an improved experience on the long run.
 
-The ensuing disappearance of any visual cues hinting at the presence of more content _below the fold_ is also a false alarm. Getting an instant feedback from the content view is just one gesture away, and the carefully crafted bounce animations make the interface even more responsive.
+[^1]: Raskin, 2000.
 
-I would't argue that those who relied heavily on scrollbars in Snow Leopard would be disoriented at first, but that is little to pay for an improved experience on the long run.
+[siracusa]: http://arstechnica.com/apple/2011/07/mac-os-x-10-7/3/#scroll-bars
+[locus]: http://www.usabilityfirst.com/glossary/locus-of-attention/
+[progressive disclosure]: http://en.wikipedia.org/wiki/Progressive_disclosure]
