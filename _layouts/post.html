@@ -21,8 +21,6 @@ layout: default
       {% assign reading_time = page.content | strip_html | number_of_words | divided_by: site.wpm %}
       {% include reading_time.html reading_time=reading_time %}
 
-      <span class="separator">&mdash;</span>
-
       <ul class="metadata-tag-list">
         {% for tag in page.tags %}
         <li class="tag-label">
