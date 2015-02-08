@@ -1,5 +1,5 @@
 <figure>
-  <img src="/images/{{ include.file }}" alt="{% if include.alt %}{{ include.alt }}{% else %}{{ include.caption }}{% endif %}">
+  <img src="http://{{ site.url }}/images/{{ include.file }}" alt="{% if include.alt %}{{ include.alt }}{% else %}{{ include.caption }}{% endif %}">
     <figcaption>
       {% if include.caption %}
         {{ include.caption }}
