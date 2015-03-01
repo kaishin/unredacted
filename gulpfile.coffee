@@ -1,18 +1,27 @@
+argv = require("yargs").argv
 browserSync = require "browser-sync"
 cache = require "gulp-cached"
 coffee = require "gulp-coffee"
+dateFormat = require "dateformat"
 del = require "del"
 gulp = require "gulp"
 gutil = require "gulp-util"
+include = require "gulp-include"
 mediaQueries = require "gulp-combine-media-queries"
 minifyCSS = require "gulp-minify-css"
 minifyJS = require "gulp-uglify"
 prefix = require "gulp-autoprefixer"
+rename = require "gulp-rename"
+replace = require "gulp-replace"
 runSequence = require "run-sequence"
-include = require "gulp-include"
 sass = require "gulp-ruby-sass"
 scssLint = require "gulp-scss-lint"
 shell = require "gulp-shell"
+slugify = require "underscore.string/slugify"
+
+now = new Date()
+title = argv.t ? "Untitled"
+dashedTitle = slugify(title)
 
 messages =
   jekyllBuild: "Rebuilding Jekyll..."
@@ -126,3 +135,10 @@ gulp.task "browser-sync", ->
     port: 4000
     open: true
     browser: "chrome"
+
+gulp.task "new", ->
+  gulp.src("./_posts/_template.md")
+    .pipe rename "#{dateFormat(now, 'yyyy-dd-mm')}-#{dashedTitle}.md"
+    .pipe replace(/DATE_PLACEHOLDER/g, "#{dateFormat(now, 'yyyy-dd-mm hh:MM:ss o')}")
+    .pipe replace(/TITLE_PLACEHOLDER/g, title)
+    .pipe gulp.dest("./_posts")
