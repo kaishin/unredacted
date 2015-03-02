@@ -5,7 +5,7 @@ description: "An update to the original showdown pitting the user interfaces of 
 category: research
 tags:
   - interactions
-  - iOS
+  - ios
   - mobile
   - usability
 ---
