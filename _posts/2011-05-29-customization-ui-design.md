@@ -1,7 +1,7 @@
 ---
 date: 2011-05-29 23:55:50 +0200
 title: "The Pitfall of Customization in UI Design"
-category: Opinion
+category: opinion
 tags:
   - customization
   - interface

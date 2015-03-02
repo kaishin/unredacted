@@ -1,7 +1,7 @@
 ---
 date: 2011-09-29 20:55:40 +0000
 title: "Quest for the Perfect Text Editor"
-category: wokflow
+category: workflow
 tags:
   - coding
   - tools

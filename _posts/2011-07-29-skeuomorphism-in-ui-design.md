@@ -1,7 +1,7 @@
 ---
 date: 2011-07-29 22:00:19 +0000
 title: "Skeuomorphism"
-category: Opinion
+category: opinion
 tags:
   - trends
   - industry
