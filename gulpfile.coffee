@@ -51,7 +51,7 @@ gulp.task "develop", ->
   runSequence ["watch", "browser-sync"]
 
 gulp.task "build", ->
-  runSequence ["sass", "coffee", "vendorJS"], "lintSass", ["minifyCSS", "minifyJS"], "jekyll-build"
+  runSequence ["sass", "coffee", "vendorJS"], "lintSass", "jekyll-build"
 
 gulp.task "clean",
   del.bind(null, ["_site"])
@@ -83,6 +83,8 @@ gulp.task "sass", ->
     .on "error", (error) -> gutil.log(error.message)
     .pipe prefix ["last 2 versions", "> 2%", "ie 11", "Firefox ESR"], cascade: false
     .pipe mediaQueries()
+    .pipe cache paths.styles
+    .pipe minifyCSS()
     .pipe gulp.dest(paths.destinationStyles)
     .pipe gulp.dest(paths.styles)
     .pipe browserSync.reload(stream: true)
@@ -108,6 +110,8 @@ gulp.task "coffee", ->
     .pipe cache paths.coffee
     .pipe coffee bare: true
     .on "error", (error) -> gutil.log(error.message)
+    .pipe cache paths.scripts
+    .pipe minifyJS()
     .pipe gulp.dest(paths.destinationScripts)
     .pipe gulp.dest(paths.scripts)
     .pipe browserSync.reload(stream: true)
@@ -116,16 +120,11 @@ gulp.task "vendorJS", ->
   gulp.src("#{paths.coffee}/vendor.js")
     .pipe include()
     .on "error", (error) -> gutil.log(error.message)
-    .pipe gulp.dest(paths.destinationScripts)
-    .pipe gulp.dest(paths.scripts)
-    .pipe browserSync.reload(stream: true)
-
-gulp.task "minifyJS", ->
-  gulp.src("#{paths.destinationScripts}/*.js")
     .pipe cache paths.scripts
     .pipe minifyJS()
     .pipe gulp.dest(paths.destinationScripts)
     .pipe gulp.dest(paths.scripts)
+    .pipe browserSync.reload(stream: true)
 
 gulp.task "browser-sync", ->
   browserSync.init null,
