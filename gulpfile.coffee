@@ -135,7 +135,7 @@ gulp.task "browser-sync", ->
     open: true
     browser: "chrome"
 
-gulp.task "new", ->
+gulp.task "post", ->
   gulp.src("./_posts/_template.md")
     .pipe rename "#{dateFormat(now, 'yyyy-mm-dd')}-#{dashedTitle}.md"
     .pipe replace(/DATE_PLACEHOLDER/g, "#{dateFormat(now, 'yyyy-mm-dd hh:MM:ss o')}")
