@@ -16,7 +16,6 @@ gems:
 url: http://unredacted.redalemeden.com
 future: false
 show_drafts: false
-limit_posts: 0
 paginate: 5
 paginate_path: "/page-:num"
 reading_time: true
