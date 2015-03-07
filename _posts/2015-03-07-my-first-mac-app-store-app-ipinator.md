@@ -1,7 +1,6 @@
 ---
 date: 2015-03-07 12:24:52 +0100
 title: "IPinator"
-draft: true
 category: announcement
 tags:
   - osx
