@@ -21,13 +21,16 @@ layout: default
       {% assign reading_time = page.content | strip_html | number_of_words | divided_by: site.wpm %}
       {% include reading_time.html reading_time=reading_time %}
 
-      <ul class="metadata-tag-list">
-        {% for tag in page.tags %}
-        <li class="tag-label">
-          {{ tag }}
-        </li>
-        {% endfor %}
-      </ul>
+      {% if page.tags %}
+        <span class="separator">&mdash;</span>
+        <ul class="metadata-tag-list">
+          {% for tag in page.tags %}
+          <li class="tag-label">
+            {{ tag }}
+          </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
     </div>
   </header>
 

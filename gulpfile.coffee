@@ -133,7 +133,7 @@ gulp.task "browser-sync", ->
     host: "localhost"
     port: 4000
     open: true
-    browser: "chrome"
+    browser: "Google Chrome"
 
 gulp.task "post", ->
   gulp.src("./_posts/_template.md")

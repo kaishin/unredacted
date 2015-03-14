@@ -6,7 +6,7 @@ article[class*=post] {
     margin: $margin 0;
 
     @include media-width(from, $container-breakpoint) {
-      margin: ($margin * 2) 0;
+      margin: ($margin * 2) 0 ($margin * 1.5);
     }
   }
 
