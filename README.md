@@ -1,4 +1,3 @@
 # Unredacted
-##### Email the author.
 
-Thoughts and opinions of a software designer.
+Source code of [Unredacted](http://unredacted.redalemeden.com)
