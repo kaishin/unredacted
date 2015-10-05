@@ -19,3 +19,8 @@ sup {
   top: 0;
   vertical-align: super;
 }
+
+abbr[title] {
+  background-color: rgba(yellow, 0.5);
+  border: none;
+}
