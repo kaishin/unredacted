@@ -1,5 +1,5 @@
 ---
-date: 2015-10-04 11:39:09 +0100
+date: 2015-10-04 23:39:09 +0100
 title: "tvOS HIG: Too Long; Didn't Read"
 category: resource
 tags:
