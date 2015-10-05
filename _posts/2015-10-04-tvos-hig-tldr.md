@@ -8,10 +8,10 @@ tags:
  - tvos
 ---
 
-{% include figure.html file="tvos.jpg" alt="Apple TV UI" caption="The user interface of Apple TV." %}
-
 I often joke about the HIG being an acronym for *Highly Ignored Guidelines*.
 This is an effort to change that, at least for tvOS.
+
+{% include figure.html file="tvos.jpg" alt="Apple TV UI" caption="The user interface of Apple TV." %}
 
 ## Glossary
 
