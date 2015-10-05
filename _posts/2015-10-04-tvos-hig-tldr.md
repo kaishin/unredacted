@@ -8,7 +8,7 @@ tags:
  - tvos
 ---
 
-I often joke about the HIG being an acronym for *Highly Ignored Guidelines*.
+I often joke about the [HIG] being an acronym for *Highly Ignored Guidelines*.
 This is an effort to change that, at least for tvOS.
 
 {% include figure.html file="tvos.jpg" alt="Apple TV UI" caption="The user interface of Apple TV." %}
@@ -31,6 +31,8 @@ This is an effort to change that, at least for tvOS.
 
 - **Top Shelf**. The area above the first row of apps where featured content of the focused app appears.
 
+*Update*: My colleague [Jack Nutting] pointed out that clicks require you to press the touch surface until it clicks, whereas taps don't.
+
 ## General
 
 - Design with multiple simultaneous users in mind.
@@ -48,7 +50,7 @@ This is an effort to change that, at least for tvOS.
 
 ## Controls
 
-- Keep the difference between click and tap in mind.
+- Keep the difference between click and tap in mind. See the [glossary](#glossary).
 - Avoid using taps for triggering actions other than navigation.
 - Avoid using standard gestures to perform non-standard actions.
 - Avoid defining new gestures to perform standard actions.
@@ -94,3 +96,5 @@ This is an effort to change that, at least for tvOS.
 - Avoid text in your app icon, unless it’s part of the brand.
 
 *[HIG]: Human Interface Guidelines
+[HIG]: https://developer.apple.com/tvos/human-interface-guidelines/
+[Jack Nutting]: https://twitter.com/jacknutting
