@@ -9,8 +9,8 @@ keywords:
   - design
   - kaishin
 baseurl: ""
-gems:
-  - jekyll-sitemap
+source: source
+gems: [jekyll-sitemap,jekyll-paginate]
 
 url: https://unredacted.redalemeden.com
 future: false
@@ -37,6 +37,11 @@ exclude: [
   "README.md",
   "Gemfile",
   "Gemfile.lock"
+]
+
+keep_files: [
+  "css",
+  "scripts"
 ]
 
 defaults:
