@@ -23,6 +23,11 @@ article[class*=post] {
     box-shadow: 0 0 0 1px rgba($black , 0.05);
     margin-left: $image-outdent * -1;
     max-width: 100% + ($image-outdent * 2);
+
+    &[alt*="[Chart]"] {
+      border-radius: 0;
+      box-shadow: none;
+    }
   }
 
   strong {
