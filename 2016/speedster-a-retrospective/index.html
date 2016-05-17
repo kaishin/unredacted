@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noodp, noydir">
+  <meta http-equiv="cleartype" content="on">
+  <title>Speedster: A Retrospective – Unredacted</title>
+  
+  <meta name="description" content="Last year, I had the not so brilliant idea to build a connection speed testing app for OS X. Between a full-time job and summer vacations, it took me about 6...">
+  <meta name="keywords" content="osx, app, Reda, Lemeden, kaishinlab, unredacted, design, kaishin">
+  <meta http-equiv="date" content="2016-05-17 01:50:22 +0200">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://unredacted.redalemeden.com/2016/speedster-a-retrospective/">
+  <link rel="alternate" type="application/rss+xml" title="Unredacted" href="http://feedpress.me/unredacted" />
+  <script src="//use.typekit.net/apn1frt.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>
+
+  <script>
+  !function(g,s,q,r,d){r=g[r]=g[r]||function(){(r.q=r.q||[]).push(
+  arguments)};d=s.createElement(q);q=s.getElementsByTagName(q)[0];
+  d.src='//d1l6p2sc9645hc.cloudfront.net/tracker.js';q.parentNode.
+  insertBefore(d,q)}(window,document,'script','_gs');
+
+  _gs('GSN-951325-O');
+</script>
+
+</head>
+
+
+  <body>
+    <header class="main-header">
+  <section class="logo" data-role="container">
+    <h1 class="logotype">
+      <a href="/" class="logotype-link">
+        <span class="logotype-link-text">
+          Unredacted
+        </span>
+      </a>
+    </h1>
+    <h2 class="headline">by <a href="http://redalemeden.com">Reda Lemeden</a></h2>
+  </section>
+</header>
+
+    <main class="main-content-box" data-role="container">
+      <article class="post">
+  <header class="post-header">
+    <div class="post-category">
+  <span class="post-category-span">
+    announcement
+  </span>
+</div>
+
+
+    <h1 class="post-title">
+      <a class="post-link" href="">
+        Speedster: A Retrospective
+      </a>
+    </h1>
+
+    <div class="post-metadata">
+      <time datetime="2016-05-17 01:50:22 +0200">
+        01:50 May 17, 2016
+      </time>
+
+      <span class="separator">&mdash;</span>
+
+      
+      
+
+
+
+<span class="reading-time">
+  3 minutes read
+</span>
+
+<svg data-reading-time="3" role="img" aria-label="3 minutes read" viewBox="0 0 55 10" xmlns="http://www.w3.org/2000/svg">
+  <title>Reading Time: 3 minutes</title>
+  <circle class="dot" cx="5" cy="5" r="5" />
+  <circle class="dot" cx="20" cy="5" r="5" />
+  <circle class="dot" cx="35" cy="5" r="5" />
+  <circle class="dot" cx="50" cy="5" r="5" />
+</svg>
+
+
+      
+        <span class="separator">&mdash;</span>
+        <ul class="metadata-tag-list">
+          
+          <li class="tag-label">
+            osx
+          </li>
+          
+          <li class="tag-label">
+            app
+          </li>
+          
+        </ul>
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+    <p>Last year, I had the <del>not so</del> brilliant idea to build a connection speed testing app for OS X. Between a full-time job and summer vacations, it took me about 6 months to wrap up a 1.0 using the <a href="http://speedof.me">SpeedOfMe</a> free-while-in-beta API. <a href="https://speedster.redalemeden.com">Speedster</a> was born.</p>
+
+<p>Speed tests are a tricky business. I wasn’t convinced that the app would work for everyone, so I made it free. I also capped the number of daily tests per user to not get my API key revoked, and added an <abbr title="In-app purchase">IAP</abbr> to remove that limitation for good measure.</p>
+
+<p>Shortly after submitting 1.0 for review, the app was rejected for violating section 2.9 of the review guidelines:</p>
+
+<blockquote>
+  <p>2.9 Apps that are “demo”, “trial”, or “test” versions will be rejected. Beta Apps may only be submitted through TestFlight and must follow the TestFlight guidelines</p>
+</blockquote>
+
+<p>It seems like I wasn’t the only one sailing uncharted waters here. After a couple of back and forths, the app went live on February 1st. Here are some relevant numbers from the first month:</p>
+
+<ul>
+  <li><em>Downloads:</em> 14k.</li>
+  <li><em><abbr title="In-app purchase">IAP</abbr>:</em> 212 units.</li>
+  <li><em>Revenue:</em> $620.</li>
+  <li><em>API usage</em>: 20k requests.</li>
+  <li><em>Conversion:</em> 1.5%.</li>
+</ul>
+
+<p>Most of the revenue was generated during the first 2 weeks as the weekly average dropped from $285 to $23 by the end of the month.</p>
+
+<p>On February 20th, I woke up to an email from SpeedOfMe announcing their pricing plans and prompting me to update my billing information.</p>
+
+<figure>
+  <img src="https://unredacted.redalemeden.com/images/speedofme-plans.png" alt="SpeedOfMe Pricing" />
+    
+      <figcaption>
+        SpeedOfMe API plans.
+      </figcaption>
+    
+</figure>
+
+<p>Uh-oh.</p>
+
+<p>Going with the Pro plan as the only reasonable option, I projected cumulative revenue and costs for the next 12 months, as they taught me in business school:</p>
+
+<figure>
+  <img src="https://unredacted.redalemeden.com/images/graphs/cumulative-costs-sales.svg" alt="[Chart] Cumulative Revenue Projection" />
+    
+      <figcaption>
+        Projected cumulative revenue/costs (purple/orange).
+      </figcaption>
+    
+</figure>
+
+<p>This did not bode well. Even an optimistic revenue projection wasn’t enough to offset the costs for more than 3 months. Without recurring revenue, Speedster would not be sustainable on the long run.</p>
+
+<p>After 24 hours of hesitation, I pulled the trigger on the <em>Speedster Hero</em> <abbr title="In-app purchase">IAP</abbr> and replaced it with consumable tests packs in 1.1. Here’s how things went since:</p>
+
+<figure>
+  <img src="https://unredacted.redalemeden.com/images/graphs/march-may-sales.svg" alt="[Chart] Daily Sales" />
+    
+      <figcaption>
+        Daily revenue between March 1st and May 12th. Total: $148.
+      </figcaption>
+    
+</figure>
+
+<p>Oops. Consumables aren’t popular outside of games for a reason. The app made a measly $148 since March 1st and the pricing tweaks I did in the course of the last two months did not move the needle.</p>
+
+<p>Remember that projection graph from earlier? Now it looks like this:</p>
+
+<figure>
+  <img src="https://unredacted.redalemeden.com/images/graphs/sales-adjusted-cumulative-costs-sales.svg" alt="[Chart] Readjusted Cumulative Revenue/Cost Projection" />
+    
+      <figcaption>
+        Readjusted cumulative revenue and costs projection (purple and orange respectively).
+      </figcaption>
+    
+</figure>
+
+<p>Did these changes make things worse? Absoluely. Do I have a clue why? Maybe. Let’s look at some ★☆☆☆☆ reviews:</p>
+
+<blockquote>
+  <p>I would stay away from this. Says free but its more like test three times and you must buy it. — Jatilq</p>
+</blockquote>
+
+<blockquote>
+  <p>no ping and 3x per day? — Ojaste</p>
+</blockquote>
+
+<blockquote>
+  <p>Why pay for a speed test when there are dozens of websites that provide this for free? limit the free version to 3 daily tests? $4 for unlimited? I will use speedtest.net for free — Legatony</p>
+</blockquote>
+
+<p>The list goes on, but I will stop here. The gist of it is that the vast majority of users do not see enough value to justify paying for a consumable <abbr title="In-app purchase">IAP</abbr>.</p>
+
+<p>With downloads hovering around a weekly average of 600, the prospects of a surge in revenue are bleak. Something’s gotta give.</p>
+
+<figure>
+  <img src="https://unredacted.redalemeden.com/images/graphs/weekly-downloads.svg" alt="[Chart] Weekly Downloads" />
+    
+      <figcaption>
+        Weekly downloads. Total as of May 12th: 21442.
+      </figcaption>
+    
+</figure>
+
+<p>In my last attempt to make this work, I am introducing some breaking changes in 2.0. Here’s an outline:</p>
+
+<ul>
+  <li>The app will no longer be free.</li>
+  <li>Users will be prompted to use their own SpeedOfMe API keys.</li>
+  <li>Existing <em>Hero</em> customers will be grand-fathered until further notice.</li>
+  <li>Test packs will remain as a secondary option for those who don’t want to manage their own API keys.</li>
+</ul>
+
+<p>Will these changes net me a few more ★☆☆☆☆ reviews? I betcha. But at this point that is the least of my concerns.</p>
+
+<p><em>To be continued</em>.</p>
+
+
+
+    <section class="feedback-box">
+      <a href="http://twitter.com/intent/tweet?url=https://unredacted.redalemeden.com/2016/speedster-a-retrospective/&text=Speedster: A Retrospective&via=kaishin&related=tentativefm" target="_blank">Tweet this</a> or send your feedback to <a target="_blank" href="https://twitter.com/intent/tweet?screen_name=kaishin">@kaishin</a>.
+    </section>
+  </section>
+</article>
+
+    </main>
+    <footer>
+  <span class="copyright">&copy;</span> 2009-2016 Reda Lemeden. All Rights Reserved.
+  <script src="/scripts/vendor.js" type="text/javascript"></script>
+  <script src="/scripts/main.js" type="text/javascript"></script>
+</footer>
+
+  </body>
+</html>

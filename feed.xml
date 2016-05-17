@@ -1,30 +1,979 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.title | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-    <link>{{ site.url }}{{ site.baseurl }}/</link>
-    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
-    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-    {% for post in site.posts limit:10 %}
+    <title>Unredacted</title>
+    <description>Thoughts and opinions of a software designer.</description>
+    <link>https://unredacted.redalemeden.com/</link>
+    <atom:link href="https://unredacted.redalemeden.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 17 May 2016 03:00:45 +0200</pubDate>
+    <lastBuildDate>Tue, 17 May 2016 03:00:45 +0200</lastBuildDate>
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+        <title>Speedster: A Retrospective</title>
+        <description>&lt;p&gt;Last year, I had the &lt;del&gt;not so&lt;/del&gt; brilliant idea to build a connection speed testing app for OS X. Between a full-time job and summer vacations, it took me about 6 months to wrap up a 1.0 using the &lt;a href=&quot;http://speedof.me&quot;&gt;SpeedOfMe&lt;/a&gt; free-while-in-beta API. &lt;a href=&quot;https://speedster.redalemeden.com&quot;&gt;Speedster&lt;/a&gt; was born.&lt;/p&gt;
+
+&lt;p&gt;Speed tests are a tricky business. I wasn’t convinced that the app would work for everyone, so I made it free. I also capped the number of daily tests per user to not get my API key revoked, and added an &lt;abbr title=&quot;In-app purchase&quot;&gt;IAP&lt;/abbr&gt; to remove that limitation for good measure.&lt;/p&gt;
+
+&lt;p&gt;Shortly after submitting 1.0 for review, the app was rejected for violating section 2.9 of the review guidelines:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;2.9 Apps that are “demo”, “trial”, or “test” versions will be rejected. Beta Apps may only be submitted through TestFlight and must follow the TestFlight guidelines&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;It seems like I wasn’t the only one sailing uncharted waters here. After a couple of back and forths, the app went live on February 1st. Here are some relevant numbers from the first month:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Downloads:&lt;/em&gt; 14k.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;&lt;abbr title=&quot;In-app purchase&quot;&gt;IAP&lt;/abbr&gt;:&lt;/em&gt; 212 units.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Revenue:&lt;/em&gt; $620.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;API usage&lt;/em&gt;: 20k requests.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Conversion:&lt;/em&gt; 1.5%.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Most of the revenue was generated during the first 2 weeks as the weekly average dropped from $285 to $23 by the end of the month.&lt;/p&gt;
+
+&lt;p&gt;On February 20th, I woke up to an email from SpeedOfMe announcing their pricing plans and prompting me to update my billing information.&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;https://unredacted.redalemeden.com/images/speedofme-plans.png&quot; alt=&quot;SpeedOfMe Pricing&quot; /&gt;
+    
+      &lt;figcaption&gt;
+        SpeedOfMe API plans.
+      &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+&lt;p&gt;Uh-oh.&lt;/p&gt;
+
+&lt;p&gt;Going with the Pro plan as the only reasonable option, I projected cumulative revenue and costs for the next 12 months, as they taught me in business school:&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;https://unredacted.redalemeden.com/images/graphs/cumulative-costs-sales.svg&quot; alt=&quot;[Chart] Cumulative Revenue Projection&quot; /&gt;
+    
+      &lt;figcaption&gt;
+        Projected cumulative revenue/costs (purple/orange).
+      &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+&lt;p&gt;This did not bode well. Even an optimistic revenue projection wasn’t enough to offset the costs for more than 3 months. Without recurring revenue, Speedster would not be sustainable on the long run.&lt;/p&gt;
+
+&lt;p&gt;After 24 hours of hesitation, I pulled the trigger on the &lt;em&gt;Speedster Hero&lt;/em&gt; &lt;abbr title=&quot;In-app purchase&quot;&gt;IAP&lt;/abbr&gt; and replaced it with consumable tests packs in 1.1. Here’s how things went since:&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;https://unredacted.redalemeden.com/images/graphs/march-may-sales.svg&quot; alt=&quot;[Chart] Daily Sales&quot; /&gt;
+    
+      &lt;figcaption&gt;
+        Daily revenue between March 1st and May 12th. Total: $148.
+      &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+&lt;p&gt;Oops. Consumables aren’t popular outside of games for a reason. The app made a measly $148 since March 1st and the pricing tweaks I did in the course of the last two months did not move the needle.&lt;/p&gt;
+
+&lt;p&gt;Remember that projection graph from earlier? Now it looks like this:&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;https://unredacted.redalemeden.com/images/graphs/sales-adjusted-cumulative-costs-sales.svg&quot; alt=&quot;[Chart] Readjusted Cumulative Revenue/Cost Projection&quot; /&gt;
+    
+      &lt;figcaption&gt;
+        Readjusted cumulative revenue and costs projection (purple and orange respectively).
+      &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+&lt;p&gt;Did these changes make things worse? Absoluely. Do I have a clue why? Maybe. Let’s look at some ★☆☆☆☆ reviews:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;I would stay away from this. Says free but its more like test three times and you must buy it. — Jatilq&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;no ping and 3x per day? — Ojaste&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Why pay for a speed test when there are dozens of websites that provide this for free? limit the free version to 3 daily tests? $4 for unlimited? I will use speedtest.net for free — Legatony&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The list goes on, but I will stop here. The gist of it is that the vast majority of users do not see enough value to justify paying for a consumable &lt;abbr title=&quot;In-app purchase&quot;&gt;IAP&lt;/abbr&gt;.&lt;/p&gt;
+
+&lt;p&gt;With downloads hovering around a weekly average of 600, the prospects of a surge in revenue are bleak. Something’s gotta give.&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;https://unredacted.redalemeden.com/images/graphs/weekly-downloads.svg&quot; alt=&quot;[Chart] Weekly Downloads&quot; /&gt;
+    
+      &lt;figcaption&gt;
+        Weekly downloads. Total as of May 12th: 21442.
+      &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+&lt;p&gt;In my last attempt to make this work, I am introducing some breaking changes in 2.0. Here’s an outline:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The app will no longer be free.&lt;/li&gt;
+  &lt;li&gt;Users will be prompted to use their own SpeedOfMe API keys.&lt;/li&gt;
+  &lt;li&gt;Existing &lt;em&gt;Hero&lt;/em&gt; customers will be grand-fathered until further notice.&lt;/li&gt;
+  &lt;li&gt;Test packs will remain as a secondary option for those who don’t want to manage their own API keys.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Will these changes net me a few more ★☆☆☆☆ reviews? I betcha. But at this point that is the least of my concerns.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;To be continued&lt;/em&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 17 May 2016 01:50:22 +0200</pubDate>
         <author>hello@redalemeden.com (Reda Lemeden)</author>
-        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
-        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
-        {% for tag in post.tags %}
-        <category>{{ tag | xml_escape }}</category>
-        {% endfor %}
-        {% for cat in post.categories %}
-        <category>{{ cat | xml_escape }}</category>
-        {% endfor %}
+        <link>https://unredacted.redalemeden.com/2016/speedster-a-retrospective/</link>
+        <guid isPermaLink="true">https://unredacted.redalemeden.com/2016/speedster-a-retrospective/</guid>
+        
+        <category>osx</category>
+        
+        <category>app</category>
+        
+        
+        <category>announcement</category>
+        
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>Announcing Nope for Safari</title>
+        <description>&lt;figure&gt;
+  &lt;img src=&quot;https://unredacted.redalemeden.com/images/nope-safari-icon.jpg&quot; alt=&quot;Nope Icon&quot; /&gt;
+    
+&lt;/figure&gt;
+
+&lt;p&gt;Two months ago I started working on &lt;a href=&quot;https://redalemeden.com/nope&quot;&gt;Nope&lt;/a&gt;, a content blocking extension for Safari 9. Today I am happy to launch &lt;a href=&quot;https://github.com/kaishin/Nope/releases/v1.2.0/&quot;&gt;a stable version&lt;/a&gt; and get more people to try it.&lt;/p&gt;
+
+&lt;h2 id=&quot;another-content-blocker&quot;&gt;Another Content Blocker?&lt;/h2&gt;
+
+&lt;p&gt;There is no shortage of feature-packed ad blocking extensions such as &lt;a href=&quot;https://getadblock.com&quot;&gt;AdBlock&lt;/a&gt;, &lt;a href=&quot;https://www.ghostery.com&quot;&gt;Ghostery&lt;/a&gt;, and &lt;a href=&quot;https://disconnect.me/disconnect&quot;&gt;Disconnect&lt;/a&gt;. But as effective as these can be, they rely on JavaScript to identify and block resources, which has a non-trivial performance cost as Benjamin Poulain &lt;a href=&quot;https://webkit.org/blog/3476/content-blockers-first-look/&quot;&gt;outlines&lt;/a&gt; on the WebKit blog:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The reason we are unhappy about the JavaScript-based content blocking extensions is they have significant performance drawbacks. The current model uses a lot of energy, reducing battery life, and increases page load time by adding latency for each resource. Certain kinds of extensions also reduce the runtime performance of webpages. Sometimes, they can allocate tremendous amounts of memory, which goes against our efforts to reduce WebKit’s memory footprint.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The new content blocking extension &lt;a href=&quot;https://developer.apple.com/library/prerelease/mac/documentation/Extensions/Conceptual/ContentBlockingRules/Introduction/Introduction.html&quot;&gt;APIs&lt;/a&gt; in WebKit were designed to solve this very problem by compiling the rules into an efficient bytecode format that executes for each request, eliminating the need to run custom scripts code to determine what should be blocked and what should not.&lt;/p&gt;
+
+&lt;p&gt;After trying out the &lt;a href=&quot;https://beta-extensions.apple.com/?q=block&quot;&gt;new batch&lt;/a&gt; of content blocking extensions in the hope of finding a replacement for &lt;a href=&quot;https://getadblock.com&quot;&gt;AdBlock&lt;/a&gt;, I decided to take matters into my own hands and start from scratch with an increased focus on &lt;a href=&quot;https://webkit.org/blog/4062/targeting-domains-with-content-blockers/&quot;&gt;performance&lt;/a&gt; and privacy.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-it-works&quot;&gt;How it Works&lt;/h2&gt;
+
+&lt;p&gt;Once Nope is enabled, every website you visit will fall into one of these three categories:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Yep&lt;/em&gt;: Nothing is blocked.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Nope&lt;/em&gt;: Third party resources belonging to any of the enabled categories (ads, tracking, social) are blocked. This is the default behavior.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Mega Nope&lt;/em&gt;: All third party resources are blocked, regardless of whether they are on the rules list or not.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can view a list of all the (sub)domains that you’ve already categorized in the settings accessible from  &lt;em&gt;Safari &amp;gt; Preferences &amp;gt; Extensions &amp;gt; Nope&lt;/em&gt;. It’s also possible to manually edit the comma-separated list to add new (sub)domains or remove existing ones.&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;https://unredacted.redalemeden.com/images/nope-screenshot.jpg&quot; alt=&quot;Nope Screenshot&quot; /&gt;
+    
+      &lt;figcaption&gt;
+        You can set the behavior for a specific domain or subdomain using the toolbar button.
+      &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;api-limitations&quot;&gt;API Limitations&lt;/h2&gt;
+
+&lt;p&gt;Currently the content blocking APIs don’t expose the blocked resources to the extension. This means that there is no way of displaying what has been blocked outside of the &lt;em&gt;Console&lt;/em&gt; logs in the developer console—not a great user experience for the average user.&lt;/p&gt;
+
+&lt;p&gt;Those who are happy to make this—hopefully temporary—tradeoff will see improved Safari performance, especially on sites that load dozens of third party scripts.&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;https://unredacted.redalemeden.com/images/content-blocked-console.jpg&quot; alt=&quot;Safari Developer Console&quot; /&gt;
+    
+      &lt;figcaption&gt;
+        Logging blocked resources in the Safari Developer Console.
+      &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;roadmap&quot;&gt;Roadmap&lt;/h2&gt;
+
+&lt;p&gt;One of the goals that motivated me to work on Nope is to make an open-source blocking database that anyone can contribute to. Since the initial database I scrapped together ended up breaking a large number of popular sites, I opted for the open-source &lt;a href=&quot;https://github.com/disconnectme/disconnect-tracking-protection&quot;&gt;Disconnect database&lt;/a&gt; to get things off the ground more quickly. Going forward, I would like to drop this dependency and move the rules to a separate repository for more flexibility and transparency.&lt;/p&gt;
+
+&lt;p&gt;So, how about you give &lt;a href=&quot;https://redalemeden.com/nope&quot;&gt;Nope&lt;/a&gt; a try and let me know what you think by opening issues or pull-requests on &lt;a href=&quot;https://github.com/kaishin/Nope&quot;&gt;the repository&lt;/a&gt;?&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 28 Dec 2015 22:30:00 +0100</pubDate>
+        <author>hello@redalemeden.com (Reda Lemeden)</author>
+        <link>https://unredacted.redalemeden.com/2015/announcing-nope/</link>
+        <guid isPermaLink="true">https://unredacted.redalemeden.com/2015/announcing-nope/</guid>
+        
+        <category>safari</category>
+        
+        <category>extension</category>
+        
+        <category>web</category>
+        
+        
+        <category>announcement</category>
+        
+      </item>
+    
+      <item>
+        <title>Achievement Unlocked: 2015 Edition</title>
+        <description>&lt;p&gt;It’s that time of the year where we mull over what we accomplished in the past twelve months. Here is my list.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Stopped using Google products for personal use.&lt;/strong&gt; Migrating my half dozen Gmail accounts was the hardest part. That and finding a viable replacement for YouTube. Spoiler: It does not exist.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Deleted unused online accounts.&lt;/strong&gt; This includes Linkedin, Hulu, and other online retailers. Needless to say, I had some unpleasant experiences during this process.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Uninstalled Flash and Java on OS X.&lt;/strong&gt; Surprised I didn’t get to this sooner.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Enabled two-factor authentication when available.&lt;/strong&gt; &lt;a href=&quot;https://www.authy.com&quot;&gt;Authy&lt;/a&gt; and &lt;a href=&quot;https://agilebits.com/onepassword&quot;&gt;1Password&lt;/a&gt; for the win.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Launched a Mac app on the App Store.&lt;/strong&gt; &lt;a href=&quot;https://ipinator.kaishin.co&quot;&gt;A utility&lt;/a&gt; that brings native IP geocoding to OS X.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Designed a mobile game.&lt;/strong&gt; An unforgiving &lt;a href=&quot;http://playroto.to&quot;&gt;space survival&lt;/a&gt; with a whiff of nostalgia.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Co-hosted a podcast.&lt;/strong&gt; Props to &lt;a href=&quot;https://twitter.com/kylefiedler&quot;&gt;Kyle Fiedler&lt;/a&gt; for putting up with &lt;a href=&quot;https://twitter.com/tentativefm&quot;&gt;my never-ending rants&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Co-organized a Swift workshop.&lt;/strong&gt; &lt;a href=&quot;http://codeswift.thoughtbot.com&quot;&gt;It was a lot of fun&lt;/a&gt;, especially the part where I had to sit back and listen to &lt;a href=&quot;https://twitter.com/jacknutting&quot;&gt;Jack Nutting&lt;/a&gt; explain optionals.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Released a Safari extension.&lt;/strong&gt; It serves to scratch my own &lt;a href=&quot;https://redalemeden.com/syndicate/&quot;&gt;RSS discovery&lt;/a&gt; itch.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Got interviewed.&lt;/strong&gt; It’s on &lt;a href=&quot;http://workspiration.org/reda-lemeden&quot;&gt;Workspiration&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Visited San Francisco during WWDC week.&lt;/strong&gt; &lt;a href=&quot;https://twitter.com/kaishin/status/608815115643686913&quot;&gt;It was totally worth it&lt;/a&gt;, even without a ticket.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Avoided buying an Apple Watch.&lt;/strong&gt; Believe me, this one was particularly challenging.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Earned a Platinum trophy on PSN&lt;/strong&gt;. Better yet, it’s from &lt;a href=&quot;https://www.playstation.com/en-us/games/bloodborne-ps4/&quot;&gt;Bloodborne&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Sun, 27 Dec 2015 12:02:37 +0100</pubDate>
+        <author>hello@redalemeden.com (Reda Lemeden)</author>
+        <link>https://unredacted.redalemeden.com/2015/achievement-unlocked-2015/</link>
+        <guid isPermaLink="true">https://unredacted.redalemeden.com/2015/achievement-unlocked-2015/</guid>
+        
+        <category>personal</category>
+        
+        <category>motivation</category>
+        
+        <category>yolo</category>
+        
+        
+        <category>round-up</category>
+        
+      </item>
+    
+      <item>
+        <title>tvOS HIG: Too Long; Didn&#39;t Read</title>
+        <description>&lt;p&gt;I often joke about the &lt;a href=&quot;https://developer.apple.com/tvos/human-interface-guidelines/&quot;&gt;&lt;abbr title=&quot;Human Interface Guidelines&quot;&gt;HIG&lt;/abbr&gt;&lt;/a&gt; being an acronym for &lt;em&gt;Highly Ignored Guidelines&lt;/em&gt;.&lt;br /&gt;
+This is an effort to change that, at least for tvOS.&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;https://unredacted.redalemeden.com/images/tvos.jpg&quot; alt=&quot;Apple TV UI&quot; /&gt;
+    
+      &lt;figcaption&gt;
+        The user interface of Apple TV.
+      &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;glossary&quot;&gt;Glossary&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Click&lt;/strong&gt;. One-finger quick press on the center of the touch surface. The primary way of triggering actions.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Click-and-hold&lt;/strong&gt;. One-finger long press on the center of the touch surface. Used to trigger context-specific actions, like entering edit mode.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Focus&lt;/strong&gt;. The state of the currently selected interface element.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Parallax&lt;/strong&gt;. An effect applied to focused app icons and content elements using multiple layered images.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Siri Remote&lt;/strong&gt;. The Siri-enabled remote used as the primary input method for Apple TV. It comes with 6 buttons, a touch surface, an accelerometer, and a gyroscope.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Swipe&lt;/strong&gt;. One-finger press followed by a quick movement in any direction on the touch surface. Used to move focus vertically or horizontally.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Tap&lt;/strong&gt;. One-finger quick press on one of the four directions (top, right, bottom, left) of the touch surface. Used for single-item directional navigation.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Top Shelf&lt;/strong&gt;. The area above the first row of apps where featured content of the focused app appears.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Update&lt;/em&gt;: My colleague &lt;a href=&quot;https://twitter.com/jacknutting&quot;&gt;Jack Nutting&lt;/a&gt; pointed out that clicks require you to press the touch surface until it clicks, whereas taps don’t.&lt;/p&gt;
+
+&lt;h2 id=&quot;general&quot;&gt;General&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Design with multiple simultaneous users in mind.&lt;/li&gt;
+  &lt;li&gt;Prefer showing old data to no data at all.&lt;/li&gt;
+  &lt;li&gt;Avoid excessive animation.&lt;/li&gt;
+  &lt;li&gt;Avoid using alerts unless it’s for a critical user decision. When you do, provide no more than two choices.&lt;/li&gt;
+  &lt;li&gt;Don’t display your logo throughout the app UI.&lt;/li&gt;
+  &lt;li&gt;Use the system video player to get advantage of all its interactive features.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;focus&quot;&gt;Focus&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Make focus obvious using labels, transforms, and other effects.&lt;/li&gt;
+  &lt;li&gt;Use parallax on focused elements to make the UI more responsive to user interaction.&lt;/li&gt;
+  &lt;li&gt;Prefer light backgrounds so that focus shadows remain visible.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;controls&quot;&gt;Controls&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Keep the difference between click and tap in mind. See the &lt;a href=&quot;#glossary&quot;&gt;glossary&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Avoid using taps for triggering actions other than navigation.&lt;/li&gt;
+  &lt;li&gt;Avoid using standard gestures to perform non-standard actions.&lt;/li&gt;
+  &lt;li&gt;Avoid defining new gestures to perform standard actions.&lt;/li&gt;
+  &lt;li&gt;Make sure your controller-compatible game works with the remote as well.&lt;/li&gt;
+  &lt;li&gt;Always enable the Play/Pause button on the Siri Remote. If you are running out of ideas, make it at least perform a click.&lt;/li&gt;
+  &lt;li&gt;Use gestures to move focus, not content. For instance, a left swipe would move focus to the left, making the content move to the right.&lt;/li&gt;
+  &lt;li&gt;Use gestures to move content when displayed full-screen. For instance. a left swipe on a full-screen image would move the image to the left.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;navigation&quot;&gt;Navigation&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Use the tab bar for the main navigation of your app.&lt;/li&gt;
+  &lt;li&gt;Allow your users to navigate back to the previous screen or out of your app/game using the Menu button.&lt;/li&gt;
+  &lt;li&gt;Don’t display a back button.&lt;/li&gt;
+  &lt;li&gt;Keep your content structure simple for easier navigation.&lt;/li&gt;
+  &lt;li&gt;Prefer text, more specifically nouns and verbs for your tab titles.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;visual-design&quot;&gt;Visual Design&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Design your interface for a 1920 x 1080 pixels (16:9) screen in mind.&lt;/li&gt;
+  &lt;li&gt;Use @1x resolution for all image assets.&lt;/li&gt;
+  &lt;li&gt;Use an opaque background layer when making your layered images.&lt;/li&gt;
+  &lt;li&gt;Provide at least one static Top Shelf image (1920px by 720px) if you don’t have any dynamic content to showcase.&lt;/li&gt;
+  &lt;li&gt;Use the sRGB color space.&lt;/li&gt;
+  &lt;li&gt;Favor muted color for better results on highly saturated TVs.&lt;/li&gt;
+  &lt;li&gt;Prefer top-to-bottom, light-to-dark gradients.&lt;/li&gt;
+  &lt;li&gt;Prefer horizontal layouts.&lt;/li&gt;
+  &lt;li&gt;Leave 60 pixels on the top and bottom, and 90 pixels on the right and left as padding around the edges of the screen.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;text&quot;&gt;Text&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Use San Francisco Text for text 39 points or smaller, and San Francisco Display for text that’s 40 points or larger.&lt;/li&gt;
+  &lt;li&gt;Put text in the top-most layer of your layered images.&lt;/li&gt;
+  &lt;li&gt;Use the built-in text styles to take advantage of features like Dynamic Type.&lt;/li&gt;
+  &lt;li&gt;Use title-case in your text buttons.&lt;/li&gt;
+  &lt;li&gt;Avoid combining both icons and text in buttons.&lt;/li&gt;
+  &lt;li&gt;Try to limit text-input in your app since typing on the Apple TV can be tedious.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;app-icon&quot;&gt;App Icon&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Use a layered image (2-5 layers) for your app icon (1280px by 768px for large version and 400px by 240px for the small one).&lt;/li&gt;
+  &lt;li&gt;Leave a padding around the content of your foreground layers.&lt;/li&gt;
+  &lt;li&gt;Don’t include screenshots in your app icon.&lt;/li&gt;
+  &lt;li&gt;Avoid text in your app icon, unless it’s part of the brand.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Mon, 05 Oct 2015 00:39:09 +0200</pubDate>
+        <author>hello@redalemeden.com (Reda Lemeden)</author>
+        <link>https://unredacted.redalemeden.com/2015/tvos-hig-tldr/</link>
+        <guid isPermaLink="true">https://unredacted.redalemeden.com/2015/tvos-hig-tldr/</guid>
+        
+        <category>apple</category>
+        
+        <category>hig</category>
+        
+        <category>tvos</category>
+        
+        
+        <category>resource</category>
+        
+      </item>
+    
+      <item>
+        <title>React Native: Initial Thoughts</title>
+        <description>&lt;p&gt;I spent a couple of days toying with &lt;a href=&quot;http://reactnative.com&quot;&gt;React Native&lt;/a&gt; since it was open-sourced by Facebook last week. Here are my initial thoughts as someone who works with both iOS and Web development:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The Good&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;Immutable user interface&lt;/em&gt;. You no longer have to track state in both the model and the view; the latter is a function of the former. As soon as the model changes, React Native re-renders a virtual tree of the view hierarchy, then applies the delta to the native views. This approach feels superior to bindings or &lt;abbr title=&quot;Functional Reactive Programming&quot;&gt;FRP&lt;/abbr&gt;, and is certainly light-years ahead of the official APIs.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;Instant feedback loop&lt;/em&gt;. Once you build your app in Xcode, you can instantly refresh it from within the simulator using &lt;code class=&quot;highlighter-rouge&quot;&gt;Command + R&lt;/code&gt;. You can even enable auto-refresh and forget about it. Going forward, I will dearly miss this feature in every non-React project.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;Perceived&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; performance&lt;/em&gt;. I haven’t experienced any hiccups while working on a simple navigation-based app. The interface is 100% native and performs like one.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;The Bad&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;Javascript&lt;/em&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;No Swift support&lt;/em&gt;. Native modules should be written in Objective-C.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;Additional abstraction layer&lt;/em&gt;. If you already do iOS development, you will be relearning a lot. For instance, &lt;code class=&quot;highlighter-rouge&quot;&gt;ListView&lt;/code&gt; is the new &lt;code class=&quot;highlighter-rouge&quot;&gt;TableView&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;SDK limitations&lt;/em&gt;. Unless you want to subclass an unhealthy amount of &lt;code class=&quot;highlighter-rouge&quot;&gt;UIKit&lt;/code&gt; using Objective-C (hint: I don’t), you will be rather restrained in what you can do out-of-the-box. I have yet to figure out how to change the &lt;code class=&quot;highlighter-rouge&quot;&gt;barTintColor&lt;/code&gt; of a &lt;code class=&quot;highlighter-rouge&quot;&gt;NavigatorIOS&lt;/code&gt;, the &lt;code class=&quot;highlighter-rouge&quot;&gt;UINavigationBar&lt;/code&gt; equivalent.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;No Interface Builder support&lt;/em&gt;. I typically use storyboards as a visual representation of user flow. Perhaps more importantly, I enjoy having the freedom of using the right tool for the job.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;Component-based file structure&lt;/em&gt;. Handling styles, view hierarchy, and business logic all in one file is a step backwards. Poor style reusability is one direct consequence of this approach.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;StyleSheet&lt;/code&gt; is not CSS&lt;/em&gt;. You will be quickly disappointed if you adventure outside the few CSS-inspired properties that React Native ships with.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;Styling nested view controllers is a pain&lt;/em&gt;. You are taken back to the root view controller after each refresh.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;The Meh&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;Flexbox&lt;/em&gt;. The authors missed the opportunity of offering a saner API and favored sticking to the official spec instead.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;Chrome Dev Tools&lt;/em&gt;. Browsers are doing too much already.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Even though a good number of these issues is very likely to be addressed as the framework matures, I find the abstraction overhead off-putting considering the current limitations. On the bright side, React Native introduces concepts that could potentially change the way we build native applications, and I am looking forward to seeing how that will unfold.&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;Purely based on perception with with no benchmarks to back it up. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sun, 29 Mar 2015 16:00:00 +0200</pubDate>
+        <author>hello@redalemeden.com (Reda Lemeden)</author>
+        <link>https://unredacted.redalemeden.com/2015/initial-thoughts-about-react-native/</link>
+        <guid isPermaLink="true">https://unredacted.redalemeden.com/2015/initial-thoughts-about-react-native/</guid>
+        
+        <category>code</category>
+        
+        <category>tools</category>
+        
+        <category>open-source</category>
+        
+        <category>mobile</category>
+        
+        
+        <category>opinion</category>
+        
+      </item>
+    
+      <item>
+        <title>IPinator</title>
+        <description>&lt;p&gt;I am happy to announce that &lt;a href=&quot;http://ipinator.kaishin.co&quot;&gt;IPinator&lt;/a&gt; is &lt;em&gt;finally&lt;/em&gt; &lt;a href=&quot;https://itunes.apple.com/us/app/ipinator/id959111981&quot;&gt;live on the App Store&lt;/a&gt;. It’s a utility app and Notification Center widget that geocodes your external IP address and displays it alongside your local one for easy copy-pasting during local development, VPN setup, etc.&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;https://unredacted.redalemeden.com/images/ipinator-screenshot.jpg&quot; alt=&quot;IPinator screenshot&quot; /&gt;
+    
+      &lt;figcaption&gt;
+        Application window and Notification Center extension.
+      &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+&lt;p&gt;IPinator is written in Swift and uses &lt;a href=&quot;https://github.com/thoughtbot/Argo&quot;&gt;Argo&lt;/a&gt; for JSON parsing and &lt;a href=&quot;https://github.com/LlamaKit/LlamaKit&quot;&gt;Llamakit&lt;/a&gt; for &lt;code class=&quot;highlighter-rouge&quot;&gt;Result&lt;/code&gt;. The code-base is straightforward, save for one limitation related to the inability to display an &lt;code class=&quot;highlighter-rouge&quot;&gt;MKMapView&lt;/code&gt; in a Today extension. The solution I came up with involved generating a map screenshot and passing it to the extension as an &lt;code class=&quot;highlighter-rouge&quot;&gt;NSImage&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you’d like to write about IPinator, feel free to &lt;a href=&quot;http://ipinator.kaishin.co/support&quot;&gt;drop a line&lt;/a&gt; for a promo code.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 07 Mar 2015 12:24:52 +0100</pubDate>
+        <author>hello@redalemeden.com (Reda Lemeden)</author>
+        <link>https://unredacted.redalemeden.com/2015/ipinator/</link>
+        <guid isPermaLink="true">https://unredacted.redalemeden.com/2015/ipinator/</guid>
+        
+        <category>osx</category>
+        
+        <category>app</category>
+        
+        <category>widget</category>
+        
+        
+        <category>announcement</category>
+        
+      </item>
+    
+      <item>
+        <title>Back to Writing</title>
+        <description>&lt;p&gt;It feels like forever since the last time I wrote something. And it kind of is, given that I haven’t updated &lt;a href=&quot;http://kaishinlab.com&quot;&gt;my personal blog&lt;/a&gt; ever since I joined thoughtbot in 2012. That was due to a combination of lacking the time to do proper research outside work hours and finding &lt;a href=&quot;https://robots.thoughtbot.com&quot;&gt;better&lt;/a&gt; &lt;a href=&quot;http://www.smashingmagazine.com/&quot;&gt;venues&lt;/a&gt; for technical writing.&lt;/p&gt;
+
+&lt;p&gt;In a way, I was trying to spend my time fixing the things that irk me rather than writing about them. Actions speak louder than words has become my motto. But as time went on, I started to realize that writing about something as way of getting it out of your system is highly effective, especially when you consider the constraint of time.&lt;/p&gt;
+
+&lt;p&gt;Given how tiny my blog audience got over the last 3 years, I considered moving to Medium as a way to revitalize my readership though social connections. I quickly discarded the idea; no amount of perks can convince me to write on a closed platform.&lt;/p&gt;
+
+&lt;p&gt;With that out of the picture, I had to figure out whether I want to resume from where I left off or start from scratch. To get the SEO benefits of the former and the freedom of the latter, I decided to move the old content to a new home and set up redirects from the old one. Having total control over your data always pays off.&lt;/p&gt;
+
+&lt;p&gt;It feels good to be back.&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 01 Mar 2015 01:16:33 +0100</pubDate>
+        <author>hello@redalemeden.com (Reda Lemeden)</author>
+        <link>https://unredacted.redalemeden.com/2015/writing/</link>
+        <guid isPermaLink="true">https://unredacted.redalemeden.com/2015/writing/</guid>
+        
+        
+        <category>announcement</category>
+        
+      </item>
+    
+      <item>
+        <title>Twitter Client Showdown: Round 2</title>
+        <description>&lt;p&gt;It has been almost a year since the &lt;a href=&quot;/2011/twitter-client-showdown/&quot;&gt;original showdown&lt;/a&gt; pitting the user interfaces of the Twitter official client and Tweetbot. Since the latter got a major update last week, it is a good opportunity to revisit the Twitter client landscape on iOS.&lt;/p&gt;
+
+&lt;p&gt;For starters, here is a quick summary of the simplified &lt;abbr title=&quot;Human Information Processing&quot;&gt;HIP&lt;/abbr&gt; model used in this showdown:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Touch interactions are assigned a value based on the precision and time required to execute them. Single taps take in average 165 milliseconds, while double taps and swipes take 350ms and 400ms respectively. The single tap is given a nominal value of 1 and will serve as the base unit of other interactions. For instance, assigning the value of 2 to a swipe means that it’s twice harder to execute than a single tap.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A task is a chain of user interactions with an end goal. The effort required to achieve a certain task equals the sum of the individual values of each interaction involved. The lower the sum, the more efficient the interface.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Typing time is zeroed out.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Only the shortest routes were used (lowest scores).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For long-time readers, here is what’s new:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Here comes a new challenger: Twitterrific.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;User flow is taken into account this time by adding the interactions required to take the user back to the main timeline in each task.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The interaction scores have been revised since. Swipes and double taps call for twice the effort required by single taps. Triple taps are the most taxing in terms of precision, long presses in term of execution time.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The tasks have been divided into two main groups: basic and advanced.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The new scores used in the test are as follows:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Interaction&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Value&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Tap&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Double tap&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Swipe&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Triple tap&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Long tap&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Multi-option prompt&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0.5&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;basic-tasks&quot;&gt;Basic tasks&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Task&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Tweetbot&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Twitter&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Twitterrific&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Compose a Tweet&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Open a link&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Reply&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3.5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4.5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Retweet&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;View conversation&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2.5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Favorite a tweet&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2.5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3.5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Follow user&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3.5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Unfollow user&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;6&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;24.5&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;30.5&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;26&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Tweetbot has clearly the upper-hand even though little has changed since the initial release. In contrast, the redesigned interface of Twitter 4 forces the user to navigate constantly back and forth between the main timeline and individual tweets, resulting in a less fluid experience; opening a link in the official client and coming back to the timeline takes twice as many taps as the other third part clients. Twitterrific lands very close to Tweetbot but does a better job in terms of consistency and ease of use: all primary tasks can be carried out using only single taps.&lt;/p&gt;
+
+&lt;h3 id=&quot;advanced-tasks&quot;&gt;Advanced tasks&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Task&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Tweetbot&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Twitter&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Twitterrific&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Reply all (&lt;abbr title=&quot;Multi-Mention Tweet&quot;&gt;MMT&lt;/abbr&gt;)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;5.5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Reply one user (&lt;abbr title=&quot;Multi-Mention Tweet&quot;&gt;MMT&lt;/abbr&gt;)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4.5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;8.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Send a new &lt;abbr title=&quot;Direct Message&quot;&gt;DM&lt;/abbr&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;7.5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;8.5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Reply to &lt;abbr title=&quot;Direct Message&quot;&gt;DM&lt;/abbr&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;8&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Compose a tweet with # and @&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Report a user&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;5.5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;6&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;6.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Delete a tweet&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Switch time-lines&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2.5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;39.5&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;44.5&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;41&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Tweetbot still comes out ahead of the official client, and barely ahead of Twitterrific. Tapbots’ popover implementation of account switching contrasts heavily with the 2 layer deep navigation required to do the same task in Twitter 4. Twitterrific does direct messages best, despite the 2 penalty points tied to the impossibility of sending a new &lt;abbr title=&quot;Direct Message&quot;&gt;DM&lt;/abbr&gt; without resorting to the obscure trick of adding a lowercase “d” to the beginning of the tweet.&lt;/p&gt;
+
+&lt;h3 id=&quot;verdict&quot;&gt;Verdict&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Task&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Tweetbot&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Twitter&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Twitterrific&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Basic&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;24.5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;30.5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;26&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Advanced&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;39.5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;44.5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;41&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;64.5&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;75&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;67&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Total (Uncalibrated)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;61.5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;76&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;66&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Previous Total&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;71.0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;68&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;74&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Tweetbot wins. Twitterrific closes in second and Twitter 4 lands third with a significant margin. The uncalibrated new scores&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; and the old scores were adde for comparison purposes. Of the three, only the official client regressed.&lt;/p&gt;
+
+&lt;p&gt;The detailed methodology and results can be viewed in this &lt;a href=&quot;http://goo.gl/Ydh6vR&quot;&gt;spreadsheet&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;The uncalibrated scores were calculated using the original interaction cost values. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Mon, 13 Feb 2012 15:38:51 +0100</pubDate>
+        <author>hello@redalemeden.com (Reda Lemeden)</author>
+        <link>https://unredacted.redalemeden.com/2012/twitter-client-showdown-round-2/</link>
+        <guid isPermaLink="true">https://unredacted.redalemeden.com/2012/twitter-client-showdown-round-2/</guid>
+        
+        <category>interactions</category>
+        
+        <category>ios</category>
+        
+        <category>mobile</category>
+        
+        <category>usability</category>
+        
+        
+        <category>research</category>
+        
+      </item>
+    
+      <item>
+        <title>2011: A year in Interface Design</title>
+        <description>&lt;p&gt;This is a summary of what happened in the world of interface and interaction design in 2011.&lt;/p&gt;
+
+&lt;h3 id=&quot;desktop-identity-crisis&quot;&gt;Desktop Identity Crisis&lt;/h3&gt;
+
+&lt;p&gt;Following a series of leaks, Microsoft finally unveiled Windows 8, pitching it as a “no compromise” operating system that brings the best of their desktop and mobile offerings. The typography-centric design language that they perfected in recent years, &lt;em&gt;Metro&lt;/em&gt;, will in all likelihood become their bread and butter in the consumer market and will remain a hot topic for years to come.&lt;/p&gt;
+
+&lt;p&gt;Meanwhile, Apple was busy shipping Lion, a milestone update that brought multi-touch gestures, native fullscreen support, and other iOS-inspired interface elements to the desktop &lt;abbr title=&quot;Operating System&quot;&gt;OS&lt;/abbr&gt;. They also made sure to upset legions of users by changing the scroll paradigm to match their mobile implementation. Mac third-party apps are coming in all sorts of flavors, and the somewhat unified look and feel of yore gave place to a hodgepodge of visual styles and design patterns: popovers, pull-to-refresh, icon-based tab navigation, monochrome icons, you name it.&lt;/p&gt;
+
+&lt;h3 id=&quot;social-innovation&quot;&gt;Social Innovation&lt;/h3&gt;
+
+&lt;p&gt;After several attempts to make a dent in the social space, Google finally decided to get its act together and build a design-driven product that can potentially dethrone Facebook. Led by Andy Hertzfeld, a prominent member of the original Macintosh team, Google+ has indisputably introduced some clever interactions such as &lt;em&gt;circles&lt;/em&gt;, the group management interface. The refreshed visual style they deployed on Google+ already started seeping into other flagship products.&lt;/p&gt;
+
+&lt;p&gt;Facebook retaliated by introducing one of the most radical UI changes in its recent history, the profile timeline. On the mobile front, they managed to ship the eagerly awaited iPad app as a universal package that uses and abuses vertical tab navigation. Overall, the mobile apps &lt;em&gt;look&lt;/em&gt; significantly better thanks to the recent design talent acquisitions; whether they work and feel as good is a whole other story.&lt;/p&gt;
+
+&lt;p&gt;Twitter overhauled their interface in an attempt to make it less intimidating to new users and more accommodating to advertisers. They also ended up ditching swipe gestures from their iPhone app as the last UI vestiges of the original Tweetie app acquired a year earlier.&lt;/p&gt;
+
+&lt;p&gt;Speaking of mobile apps, Path has managed to steal the spotlight from major social players by releasing a completely revamped interface that showcases some playful interactions and experimental design patterns.&lt;/p&gt;
+
+&lt;h3 id=&quot;honorable-mentions&quot;&gt;Honorable Mentions&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;Web, Native,or Hybrid?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The bi-polar tone of this pointless debate has given place to another discussion about the UX implications of Web views, a new hybrid technique that involves displaying Web pages within native containers. Even though this approach garnered widespread adoption by large companies such as Google, Facebook, and even Apple, it has yet to prove itself by curbing the user experience inconsistencies it entails.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Gestures vs. Buttons&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;As touch screens are in the process of becoming the prevalent form factor, the transition to gestural interfaces is dividing the design community. As users, our interaction mental model is currently in a limbo state; we can hardly keep up with the overwhelming number of new interactions that we have to deal with on a daily basis. As designers, striking the balance between ease of use, memorability and discoverability is becoming increasingly hard in the lack of industry-wide standards.&lt;/p&gt;
+
+&lt;p&gt;The question is no longer whether a radical shift in our field is underway, but rather where it will be taking us in the years to come.&lt;/p&gt;
+
+&lt;p&gt;Goodbye 2011, welcome 2012.&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 01 Jan 2012 06:51:32 +0100</pubDate>
+        <author>hello@redalemeden.com (Reda Lemeden)</author>
+        <link>https://unredacted.redalemeden.com/2012/2011-ui-design/</link>
+        <guid isPermaLink="true">https://unredacted.redalemeden.com/2012/2011-ui-design/</guid>
+        
+        <category>industry</category>
+        
+        <category>social</category>
+        
+        <category>osx</category>
+        
+        <category>ios</category>
+        
+        <category>windows</category>
+        
+        
+        <category>round-up</category>
+        
+      </item>
+    
+      <item>
+        <title>Rethinking Google+ for iOS</title>
+        <description>&lt;p&gt;Your mileage may vary, but I think Google has what it takes to compete against Facebook in the social network space. Smart interactions and streamlined privacy controls drastically improve user experience on a social interface and Google seems to be pouring considerable resources in this direction.&lt;/p&gt;
+
+&lt;p&gt;Notwithstanding, the iOS client of Google+ is blatantly falling short of the standards set by the Web interface. Given that Facebook have just rolled out a decent update to their iOS app, Google is clearly losing the edge on the mobile front. They may have the best talent in the industry, but for some reason they don’t seem to be giving the iPhone app the attention it deserves. It’s a mishmash of Web views, experimental touch interactions, and unpolished graphics, resulting in a sub-par user experience.&lt;/p&gt;
+
+&lt;h3 id=&quot;signing-in&quot;&gt;Signing In&lt;/h3&gt;
+
+&lt;p&gt;To start off, users have to go through two completely useless screens to get to the sign-in form. In order to create an account, you have to hunt down a blue underlined link in the second screen, only to be taken to a poorly designed Web form. The obvious solution would be greeting users with the actual sign-in form as shown in the mock-up below.&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;https://unredacted.redalemeden.com/images/google-plus-signing-in.jpg&quot; alt=&quot;Signing in&quot; /&gt;
+    
+      &lt;figcaption&gt;
+        Sign-in screen redesign.
+      &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+&lt;p&gt;I attempted to stay as close as possible to the colorful visual style that Google has been pushing as of late, which happens to be a step in the right direction.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-stream&quot;&gt;The Stream&lt;/h3&gt;
+
+&lt;p&gt;Dashboard navigation on mobile apps is as hacky as a design pattern can get, especially when a tab bar can perfectly fit the bill. As for the default tab, it would be safe to assume that users will be spending most of their time on the stream. The mockup below shows how a native tab navigation could save users a few taps and leverage what they already learnt on iOS.&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;https://unredacted.redalemeden.com/images/google-plus-homeview.jpg&quot; alt=&quot;Navigation &amp;amp; Stream view&quot; /&gt;
+    
+      &lt;figcaption&gt;
+        Navigation redesign.
+      &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+&lt;p&gt;Notifications would appear next to the logo in the top navigation bar, making them hard to miss throughout the different sections of the app. Content should be given more prominence by using the full-width of the screen. Ideally, raw URLs should be hidden as long as the actual content of the link is displayed inline.&lt;/p&gt;
+
+&lt;h3 id=&quot;touch-interactions&quot;&gt;Touch Interactions&lt;/h3&gt;
+
+&lt;p&gt;Buttons might be a hack, but it’d be safe to assume that users won’t be switching streams often enough to justify gesture-driven navigation. Instead, touch gestures should be used to perform the frequent action of plus-one-ing posts. A popover would come to the rescue as a perfectly scalable design pattern to handle circle switching. Other post-specific actions such as commenting or sharing would be revealed with a single tap in order to reduce visual clutter—a pattern used brilliantly by Tweetbot.&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;https://unredacted.redalemeden.com/images/google-plus-new-interactions.jpg&quot; alt=&quot;Interactions&quot; /&gt;
+    
+      &lt;figcaption&gt;
+        Circle-switching and post-specific actions.
+      &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+&lt;p&gt;While these concepts are in no way a panacea for the current interface shortcomings, they could be a very good start if Google decides to get more serious about its fledgling social network.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 02 Nov 2011 09:18:53 +0100</pubDate>
+        <author>hello@redalemeden.com (Reda Lemeden)</author>
+        <link>https://unredacted.redalemeden.com/2011/rethinking-google-plus-ios/</link>
+        <guid isPermaLink="true">https://unredacted.redalemeden.com/2011/rethinking-google-plus-ios/</guid>
+        
+        <category>google</category>
+        
+        <category>interface</category>
+        
+        <category>ios</category>
+        
+        
+        <category>redesign</category>
+        
+      </item>
+    
   </channel>
 </rss>

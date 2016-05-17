@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noodp, noydir">
+  <meta http-equiv="cleartype" content="on">
+  <title>Twitter Client Showdown: Round 2 – Unredacted</title>
+  
+  <meta name="description" content="It has been almost a year since the original showdown pitting the user interfaces of the Twitter official client and Tweetbot. Since the latter got a major u...">
+  <meta name="keywords" content="interactions, ios, mobile, usability, Reda, Lemeden, kaishinlab, unredacted, design, kaishin">
+  <meta http-equiv="date" content="2012-02-13 15:38:51 +0100">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://unredacted.redalemeden.com/2012/twitter-client-showdown-round-2/">
+  <link rel="alternate" type="application/rss+xml" title="Unredacted" href="http://feedpress.me/unredacted" />
+  <script src="//use.typekit.net/apn1frt.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>
+
+  <script>
+  !function(g,s,q,r,d){r=g[r]=g[r]||function(){(r.q=r.q||[]).push(
+  arguments)};d=s.createElement(q);q=s.getElementsByTagName(q)[0];
+  d.src='//d1l6p2sc9645hc.cloudfront.net/tracker.js';q.parentNode.
+  insertBefore(d,q)}(window,document,'script','_gs');
+
+  _gs('GSN-951325-O');
+</script>
+
+</head>
+
+
+  <body>
+    <header class="main-header">
+  <section class="logo" data-role="container">
+    <h1 class="logotype">
+      <a href="/" class="logotype-link">
+        <span class="logotype-link-text">
+          Unredacted
+        </span>
+      </a>
+    </h1>
+    <h2 class="headline">by <a href="http://redalemeden.com">Reda Lemeden</a></h2>
+  </section>
+</header>
+
+    <main class="main-content-box" data-role="container">
+      <article class="post">
+  <header class="post-header">
+    <div class="post-category">
+  <span class="post-category-span">
+    research
+  </span>
+</div>
+
+
+    <h1 class="post-title">
+      <a class="post-link" href="">
+        Twitter Client Showdown: Round 2
+      </a>
+    </h1>
+
+    <div class="post-metadata">
+      <time datetime="2012-02-13 15:38:51 +0100">
+        15:38 Feb 13, 2012
+      </time>
+
+      <span class="separator">&mdash;</span>
+
+      
+      
+
+
+
+<span class="reading-time">
+  3 minutes read
+</span>
+
+<svg data-reading-time="3" role="img" aria-label="3 minutes read" viewBox="0 0 55 10" xmlns="http://www.w3.org/2000/svg">
+  <title>Reading Time: 3 minutes</title>
+  <circle class="dot" cx="5" cy="5" r="5" />
+  <circle class="dot" cx="20" cy="5" r="5" />
+  <circle class="dot" cx="35" cy="5" r="5" />
+  <circle class="dot" cx="50" cy="5" r="5" />
+</svg>
+
+
+      
+        <span class="separator">&mdash;</span>
+        <ul class="metadata-tag-list">
+          
+          <li class="tag-label">
+            interactions
+          </li>
+          
+          <li class="tag-label">
+            ios
+          </li>
+          
+          <li class="tag-label">
+            mobile
+          </li>
+          
+          <li class="tag-label">
+            usability
+          </li>
+          
+        </ul>
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+    <p>It has been almost a year since the <a href="/2011/twitter-client-showdown/">original showdown</a> pitting the user interfaces of the Twitter official client and Tweetbot. Since the latter got a major update last week, it is a good opportunity to revisit the Twitter client landscape on iOS.</p>
+
+<p>For starters, here is a quick summary of the simplified <abbr title="Human Information Processing">HIP</abbr> model used in this showdown:</p>
+
+<ul>
+  <li>
+    <p>Touch interactions are assigned a value based on the precision and time required to execute them. Single taps take in average 165 milliseconds, while double taps and swipes take 350ms and 400ms respectively. The single tap is given a nominal value of 1 and will serve as the base unit of other interactions. For instance, assigning the value of 2 to a swipe means that it’s twice harder to execute than a single tap.</p>
+  </li>
+  <li>
+    <p>A task is a chain of user interactions with an end goal. The effort required to achieve a certain task equals the sum of the individual values of each interaction involved. The lower the sum, the more efficient the interface.</p>
+  </li>
+  <li>
+    <p>Typing time is zeroed out.</p>
+  </li>
+  <li>
+    <p>Only the shortest routes were used (lowest scores).</p>
+  </li>
+</ul>
+
+<p>For long-time readers, here is what’s new:</p>
+
+<ul>
+  <li>
+    <p>Here comes a new challenger: Twitterrific.</p>
+  </li>
+  <li>
+    <p>User flow is taken into account this time by adding the interactions required to take the user back to the main timeline in each task.</p>
+  </li>
+  <li>
+    <p>The interaction scores have been revised since. Swipes and double taps call for twice the effort required by single taps. Triple taps are the most taxing in terms of precision, long presses in term of execution time.</p>
+  </li>
+  <li>
+    <p>The tasks have been divided into two main groups: basic and advanced.</p>
+  </li>
+</ul>
+
+<p>The new scores used in the test are as follows:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interaction</th>
+      <th style="text-align: center">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tap</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td>Double tap</td>
+      <td style="text-align: center">2</td>
+    </tr>
+    <tr>
+      <td>Swipe</td>
+      <td style="text-align: center">2</td>
+    </tr>
+    <tr>
+      <td>Triple tap</td>
+      <td style="text-align: center">3</td>
+    </tr>
+    <tr>
+      <td>Long tap</td>
+      <td style="text-align: center">2.5</td>
+    </tr>
+    <tr>
+      <td>Multi-option prompt</td>
+      <td style="text-align: center">0.5</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="basic-tasks">Basic tasks</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Task</th>
+      <th style="text-align: center">Tweetbot</th>
+      <th style="text-align: center">Twitter</th>
+      <th style="text-align: center">Twitterrific</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Compose a Tweet</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">2</td>
+    </tr>
+    <tr>
+      <td>Open a link</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">2</td>
+    </tr>
+    <tr>
+      <td>Reply</td>
+      <td style="text-align: center">3.5</td>
+      <td style="text-align: center">4.5</td>
+      <td style="text-align: center">3.5</td>
+    </tr>
+    <tr>
+      <td>Retweet</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td>View conversation</td>
+      <td style="text-align: center">2.5</td>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">3.5</td>
+    </tr>
+    <tr>
+      <td>Favorite a tweet</td>
+      <td style="text-align: center">2.5</td>
+      <td style="text-align: center">3.5</td>
+      <td style="text-align: center">2.5</td>
+    </tr>
+    <tr>
+      <td>Follow user</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">3.5</td>
+      <td style="text-align: center">3.5</td>
+    </tr>
+    <tr>
+      <td>Unfollow user</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td><strong>Total</strong></td>
+      <td style="text-align: center"><strong>24.5</strong></td>
+      <td style="text-align: center"><strong>30.5</strong></td>
+      <td style="text-align: center"><strong>26</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Tweetbot has clearly the upper-hand even though little has changed since the initial release. In contrast, the redesigned interface of Twitter 4 forces the user to navigate constantly back and forth between the main timeline and individual tweets, resulting in a less fluid experience; opening a link in the official client and coming back to the timeline takes twice as many taps as the other third part clients. Twitterrific lands very close to Tweetbot but does a better job in terms of consistency and ease of use: all primary tasks can be carried out using only single taps.</p>
+
+<h3 id="advanced-tasks">Advanced tasks</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Task</th>
+      <th style="text-align: center">Tweetbot</th>
+      <th style="text-align: center">Twitter</th>
+      <th style="text-align: center">Twitterrific</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Reply all (<abbr title="Multi-Mention Tweet">MMT</abbr>)</td>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">5.5</td>
+      <td style="text-align: center">3.5</td>
+    </tr>
+    <tr>
+      <td>Reply one user (<abbr title="Multi-Mention Tweet">MMT</abbr>)</td>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">4.5</td>
+      <td style="text-align: center">8.5</td>
+    </tr>
+    <tr>
+      <td>Send a new <abbr title="Direct Message">DM</abbr></td>
+      <td style="text-align: center">7.5</td>
+      <td style="text-align: center">8.5</td>
+      <td style="text-align: center">7</td>
+    </tr>
+    <tr>
+      <td>Reply to <abbr title="Direct Message">DM</abbr></td>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">8</td>
+      <td style="text-align: center">3.5</td>
+    </tr>
+    <tr>
+      <td>Compose a tweet with # and @</td>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td>Report a user</td>
+      <td style="text-align: center">5.5</td>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">6.5</td>
+    </tr>
+    <tr>
+      <td>Delete a tweet</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td>Switch time-lines</td>
+      <td style="text-align: center">2.5</td>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">3</td>
+    </tr>
+    <tr>
+      <td><strong>Total</strong></td>
+      <td style="text-align: center"><strong>39.5</strong></td>
+      <td style="text-align: center"><strong>44.5</strong></td>
+      <td style="text-align: center"><strong>41</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Tweetbot still comes out ahead of the official client, and barely ahead of Twitterrific. Tapbots’ popover implementation of account switching contrasts heavily with the 2 layer deep navigation required to do the same task in Twitter 4. Twitterrific does direct messages best, despite the 2 penalty points tied to the impossibility of sending a new <abbr title="Direct Message">DM</abbr> without resorting to the obscure trick of adding a lowercase “d” to the beginning of the tweet.</p>
+
+<h3 id="verdict">Verdict</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Task</th>
+      <th style="text-align: center">Tweetbot</th>
+      <th style="text-align: center">Twitter</th>
+      <th style="text-align: center">Twitterrific</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Basic</td>
+      <td style="text-align: center">24.5</td>
+      <td style="text-align: center">30.5</td>
+      <td style="text-align: center">26</td>
+    </tr>
+    <tr>
+      <td>Advanced</td>
+      <td style="text-align: center">39.5</td>
+      <td style="text-align: center">44.5</td>
+      <td style="text-align: center">41</td>
+    </tr>
+    <tr>
+      <td><strong>Total</strong></td>
+      <td style="text-align: center"><strong>64.5</strong></td>
+      <td style="text-align: center"><strong>75</strong></td>
+      <td style="text-align: center"><strong>67</strong></td>
+    </tr>
+    <tr>
+      <td>Total (Uncalibrated)</td>
+      <td style="text-align: center">61.5</td>
+      <td style="text-align: center">76</td>
+      <td style="text-align: center">66</td>
+    </tr>
+    <tr>
+      <td>Previous Total</td>
+      <td style="text-align: center">71.0</td>
+      <td style="text-align: center">68</td>
+      <td style="text-align: center">74</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Tweetbot wins. Twitterrific closes in second and Twitter 4 lands third with a significant margin. The uncalibrated new scores<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> and the old scores were adde for comparison purposes. Of the three, only the official client regressed.</p>
+
+<p>The detailed methodology and results can be viewed in this <a href="http://goo.gl/Ydh6vR">spreadsheet</a>.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>The uncalibrated scores were calculated using the original interaction cost values. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+
+    <section class="feedback-box">
+      <a href="http://twitter.com/intent/tweet?url=https://unredacted.redalemeden.com/2012/twitter-client-showdown-round-2/&text=Twitter Client Showdown: Round 2&via=kaishin&related=tentativefm" target="_blank">Tweet this</a> or send your feedback to <a target="_blank" href="https://twitter.com/intent/tweet?screen_name=kaishin">@kaishin</a>.
+    </section>
+  </section>
+</article>
+
+    </main>
+    <footer>
+  <span class="copyright">&copy;</span> 2009-2016 Reda Lemeden. All Rights Reserved.
+  <script src="/scripts/vendor.js" type="text/javascript"></script>
+  <script src="/scripts/main.js" type="text/javascript"></script>
+</footer>
+
+  </body>
+</html>
