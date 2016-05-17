@@ -45,7 +45,7 @@ gulp.task("develop", function() {
 })
 
 gulp.task("build", function() {
-  runSequence(["generate-css", "minify-scripts", "vendorize-scripts"], "lint-scss", "jekyll-build")
+  runSequence(["generate-css", "minify-scripts", "vendorize-scripts"], "jekyll-build")
 })
 
 gulp.task("rebuild", function() {
