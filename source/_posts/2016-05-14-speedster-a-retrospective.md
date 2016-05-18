@@ -76,6 +76,6 @@ Will these changes net me a few more ★☆☆☆☆ reviews? I betcha. But at t
 *[IAP]: In-app purchase
 
 [SpeedOfMe]: http://speedof.me
-[Speedster]: https://speedster.redalemeden.com
+[Speedster]: https://speedsterapp.com
 
 
