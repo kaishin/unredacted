@@ -5,12 +5,12 @@
     <description>Thoughts and opinions of a software designer.</description>
     <link>https://unredacted.redalemeden.com/</link>
     <atom:link href="https://unredacted.redalemeden.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 17 May 2016 03:04:10 +0200</pubDate>
-    <lastBuildDate>Tue, 17 May 2016 03:04:10 +0200</lastBuildDate>
+    <pubDate>Wed, 18 May 2016 11:02:17 +0200</pubDate>
+    <lastBuildDate>Wed, 18 May 2016 11:02:17 +0200</lastBuildDate>
     
       <item>
         <title>Speedster: A Retrospective</title>
-        <description>&lt;p&gt;Last year, I had the &lt;del&gt;not so&lt;/del&gt; brilliant idea to build a connection speed testing app for OS X. Between a full-time job and summer vacations, it took me about 6 months to wrap up a 1.0 using the &lt;a href=&quot;http://speedof.me&quot;&gt;SpeedOfMe&lt;/a&gt; free-while-in-beta API. &lt;a href=&quot;https://speedster.redalemeden.com&quot;&gt;Speedster&lt;/a&gt; was born.&lt;/p&gt;
+        <description>&lt;p&gt;Last year, I had the &lt;del&gt;not so&lt;/del&gt; brilliant idea to build a connection speed testing app for OS X. Between a full-time job and summer vacations, it took me about 6 months to wrap up a 1.0 using the &lt;a href=&quot;http://speedof.me&quot;&gt;SpeedOfMe&lt;/a&gt; free-while-in-beta API. &lt;a href=&quot;https://speedsterapp.com&quot;&gt;Speedster&lt;/a&gt; was born.&lt;/p&gt;
 
 &lt;p&gt;Speed tests are a tricky business. I wasn’t convinced that the app would work for everyone, so I made it free. I also capped the number of daily tests per user to not get my API key revoked, and added an &lt;abbr title=&quot;In-app purchase&quot;&gt;IAP&lt;/abbr&gt; to remove that limitation for good measure.&lt;/p&gt;
 
