@@ -10,7 +10,7 @@ keywords:
   - kaishin
 baseurl: ""
 source: source
-gems: [jekyll-sitemap,jekyll-paginate]
+gems: [jekyll-sitemap, jekyll-paginate]
 
 url: https://unredacted.redalemeden.com
 future: false
