@@ -1,6 +1,7 @@
 argv = require("yargs").argv;
 browserSync = require("browser-sync")
 cache = require("gulp-cached")
+dateFormat = require("dateformat")
 del = require("del")
 ghPages = require("gulp-gh-pages")
 gulp = require("gulp")
