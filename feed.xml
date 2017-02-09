@@ -5,8 +5,85 @@
     <description>Thoughts and opinions of a software designer.</description>
     <link>https://unredacted.redalemeden.com/</link>
     <atom:link href="https://unredacted.redalemeden.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 06 Jan 2017 13:14:03 +0100</pubDate>
-    <lastBuildDate>Fri, 06 Jan 2017 13:14:03 +0100</lastBuildDate>
+    <pubDate>Fri, 10 Feb 2017 00:10:22 +0100</pubDate>
+    <lastBuildDate>Fri, 10 Feb 2017 00:10:22 +0100</lastBuildDate>
+    
+      <item>
+        <title>Achievement Unlocked: January 2017</title>
+        <description>&lt;p&gt;Amidst all the depressing stuff going on, it is sometimes healthy to celebrate the little victories of everyday life. Here is a round-up to follow up on &lt;a href=&quot;/2015/achievement-unlocked-2015&quot;&gt;the one&lt;/a&gt; I wrote a little over a year ago.&lt;/p&gt;
+
+&lt;h3 id=&quot;restrospective&quot;&gt;2016 Restrospective&lt;/h3&gt;
+
+&lt;p&gt;Between a new job, a house move, and a flurry of depressing news, my productivity took a hit in 2016. I was nevertheless able to do some fun things on the side:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Built and launched &lt;a href=&quot;https://speedsterapp.com&quot;&gt;Speedster&lt;/a&gt;, a native bandwidth speed testing app for macOS. The feedback was very positive, but I &lt;a href=&quot;/2016/speedster-a-retrospective&quot;&gt;struggled with the business model&lt;/a&gt;. As of now, the app is no longer available on the App Store, and version 3.0 is in the works (more on that later).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Launched then open-sourced &lt;a href=&quot;https://github.com/thoughtbot/Markoff&quot;&gt;Markoff&lt;/a&gt;, a lightweight Markdown previewer app for macOS.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Published &lt;a href=&quot;https://robots.thoughtbot.com/building-ios-interfaces-views&quot;&gt;three&lt;/a&gt; &lt;a href=&quot;https://robots.thoughtbot.com/building-ios-interfaces-custom-button&quot;&gt;more&lt;/a&gt; &lt;a href=&quot;https://robots.thoughtbot.com/building-ios-interfaces-subclassing-views&quot;&gt;articles&lt;/a&gt; in the &lt;em&gt;Designing for iOS&lt;/em&gt; series that I started back in 2015.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://twitter.com/kaishin/status/706076592976629761&quot;&gt;Customized an arcade stick&lt;/a&gt; 🕹 and had a ton of fun doing it.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Designed a macOS &lt;a href=&quot;https://dribbble.com/shots/2730205-Undertale-Replacement-Icon&quot;&gt;replacement icon&lt;/a&gt; for &lt;a href=&quot;http://undertale.com/&quot;&gt;Undertale&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Released &lt;a href=&quot;https://github.com/kaishin/ImageScout&quot;&gt;ImageScout 1.0&lt;/a&gt;, a Swift implementation of fastimage.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Made a &lt;a href=&quot;https://swiftbits.redalemeden.com/resources/swift-3-access-control/&quot;&gt;visualization&lt;/a&gt; on Swift 3.0 Access control.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Gave &lt;a href=&quot;https://speakerdeck.com/kaishin/swift-3-api-best-practices-by-example&quot;&gt;a talk&lt;/a&gt; about Swift API guidelines at Cocoaheads Stockholm.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;january-2017&quot;&gt;January 2017&lt;/h3&gt;
+
+&lt;h4 id=&quot;code&quot;&gt;Code&lt;/h4&gt;
+
+&lt;p&gt;Even though I’ve been writing less code outside of my full-time job, I managed to do a complete rewrite of &lt;a href=&quot;https://speedsterapp.com&quot;&gt;Speedster&lt;/a&gt; 3.0 since last September. The app is now written in Swift 3.0 and no longer relies on the &lt;a href=&quot;https://speedof.me&quot;&gt;SpeedOfMe&lt;/a&gt; API for the tests (good riddance). A good chunk of my time off last month went into revisiting the UI and hunting down a couple of timeout issues that I’d like to fix before pushing the first beta.&lt;/p&gt;
+
+&lt;p&gt;On the open-source front, I managed to release &lt;a href=&quot;https://cocoapods.org/pods/Gifu&quot;&gt;Gifu&lt;/a&gt; 2.0 after 3 months of testing. The new version is written in Swift 3.0 and introduces a new protocol-based API that makes the library a lot more versatile.&lt;/p&gt;
+
+&lt;p&gt;Last but not least I managed to remove all anayltics from my websites. Yay privacy!&lt;/p&gt;
+
+&lt;h4 id=&quot;design&quot;&gt;Design&lt;/h4&gt;
+
+&lt;p&gt;I took a little break from code and spent some time refreshing the Speedster icon. I swapped the color palette and added some extra details to the needle as you can see on the &lt;a href=&quot;https://dribbble.com/shots/3252363-Speedster-3-0-Icon&quot;&gt;Dribbble shot&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;podcasting&quot;&gt;Podcasting&lt;/h4&gt;
+
+&lt;p&gt;We resumed recording &lt;a href=&quot;http://tentative.fm&quot;&gt;Tentative&lt;/a&gt; and the &lt;a href=&quot;http://tentative.fm/31&quot;&gt;1st episode&lt;/a&gt; of the season is already out! We discussed our new year’s resolutions in a quite spontaneous and laid back episode.&lt;/p&gt;
+
+&lt;h4 id=&quot;writing&quot;&gt;Writing&lt;/h4&gt;
+
+&lt;p&gt;A little over ten years ago, I started a &lt;em&gt;manga&lt;/em&gt; (Japanese comic) side project. I have been sporadically revisiting it since, adding tiny bits to the story and characters.&lt;br /&gt;
+As time went by however, I started losing the spark that initially got me going.&lt;/p&gt;
+
+&lt;p&gt;Last month, I discarded all but the name of the main protagonist the overall tone of the story. A new direction that will hopefully get the creative juices flowing and help me keep the momentum.&lt;/p&gt;
+
+&lt;p&gt;Creative writing aside, I’d like to push these updates more frequently to maintain my motivation and keep everyone interested in my side projects in the loop.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 02 Feb 2017 09:52:55 +0100</pubDate>
+        <author>hello@redalemeden.com (Reda Lemeden)</author>
+        <link>https://unredacted.redalemeden.com/2017/achievement-unlocked-january-2017/</link>
+        <guid isPermaLink="true">https://unredacted.redalemeden.com/2017/achievement-unlocked-january-2017/</guid>
+        
+        <category>personal</category>
+        
+        <category>motivation</category>
+        
+        
+        <category>round-up</category>
+        
+      </item>
     
       <item>
         <title>Speedster: A Retrospective</title>
@@ -905,73 +982,6 @@ This is an effort to change that, at least for tvOS.&lt;/p&gt;
         
         
         <category>round-up</category>
-        
-      </item>
-    
-      <item>
-        <title>Rethinking Google+ for iOS</title>
-        <description>&lt;p&gt;Your mileage may vary, but I think Google has what it takes to compete against Facebook in the social network space. Smart interactions and streamlined privacy controls drastically improve user experience on a social interface and Google seems to be pouring considerable resources in this direction.&lt;/p&gt;
-
-&lt;p&gt;Notwithstanding, the iOS client of Google+ is blatantly falling short of the standards set by the Web interface. Given that Facebook have just rolled out a decent update to their iOS app, Google is clearly losing the edge on the mobile front. They may have the best talent in the industry, but for some reason they don’t seem to be giving the iPhone app the attention it deserves. It’s a mishmash of Web views, experimental touch interactions, and unpolished graphics, resulting in a sub-par user experience.&lt;/p&gt;
-
-&lt;h3 id=&quot;signing-in&quot;&gt;Signing In&lt;/h3&gt;
-
-&lt;p&gt;To start off, users have to go through two completely useless screens to get to the sign-in form. In order to create an account, you have to hunt down a blue underlined link in the second screen, only to be taken to a poorly designed Web form. The obvious solution would be greeting users with the actual sign-in form as shown in the mock-up below.&lt;/p&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;https://unredacted.redalemeden.com/images/google-plus-signing-in.jpg&quot; alt=&quot;Signing in&quot; /&gt;
-    
-      &lt;figcaption&gt;
-        Sign-in screen redesign.
-      &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-
-&lt;p&gt;I attempted to stay as close as possible to the colorful visual style that Google has been pushing as of late, which happens to be a step in the right direction.&lt;/p&gt;
-
-&lt;h3 id=&quot;the-stream&quot;&gt;The Stream&lt;/h3&gt;
-
-&lt;p&gt;Dashboard navigation on mobile apps is as hacky as a design pattern can get, especially when a tab bar can perfectly fit the bill. As for the default tab, it would be safe to assume that users will be spending most of their time on the stream. The mockup below shows how a native tab navigation could save users a few taps and leverage what they already learnt on iOS.&lt;/p&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;https://unredacted.redalemeden.com/images/google-plus-homeview.jpg&quot; alt=&quot;Navigation &amp;amp; Stream view&quot; /&gt;
-    
-      &lt;figcaption&gt;
-        Navigation redesign.
-      &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-
-&lt;p&gt;Notifications would appear next to the logo in the top navigation bar, making them hard to miss throughout the different sections of the app. Content should be given more prominence by using the full-width of the screen. Ideally, raw URLs should be hidden as long as the actual content of the link is displayed inline.&lt;/p&gt;
-
-&lt;h3 id=&quot;touch-interactions&quot;&gt;Touch Interactions&lt;/h3&gt;
-
-&lt;p&gt;Buttons might be a hack, but it’d be safe to assume that users won’t be switching streams often enough to justify gesture-driven navigation. Instead, touch gestures should be used to perform the frequent action of plus-one-ing posts. A popover would come to the rescue as a perfectly scalable design pattern to handle circle switching. Other post-specific actions such as commenting or sharing would be revealed with a single tap in order to reduce visual clutter—a pattern used brilliantly by Tweetbot.&lt;/p&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;https://unredacted.redalemeden.com/images/google-plus-new-interactions.jpg&quot; alt=&quot;Interactions&quot; /&gt;
-    
-      &lt;figcaption&gt;
-        Circle-switching and post-specific actions.
-      &lt;/figcaption&gt;
-    
-&lt;/figure&gt;
-
-&lt;p&gt;While these concepts are in no way a panacea for the current interface shortcomings, they could be a very good start if Google decides to get more serious about its fledgling social network.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 02 Nov 2011 09:18:53 +0100</pubDate>
-        <author>hello@redalemeden.com (Reda Lemeden)</author>
-        <link>https://unredacted.redalemeden.com/2011/rethinking-google-plus-ios/</link>
-        <guid isPermaLink="true">https://unredacted.redalemeden.com/2011/rethinking-google-plus-ios/</guid>
-        
-        <category>google</category>
-        
-        <category>interface</category>
-        
-        <category>ios</category>
-        
-        
-        <category>redesign</category>
         
       </item>
     
