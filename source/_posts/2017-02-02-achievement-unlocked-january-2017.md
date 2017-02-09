@@ -54,7 +54,7 @@ As time went by however, I started losing the spark that initially got me going.
 
 Last month, I discarded all but the name of the main protagonist the overall tone of the story. A new direction that will hopefully get the creative juices flowing and help me keep the momentum.
 
-Creative writing aside, I'd like to push these updates more frequently to maintain my motivation and keep everyone interested in my side projects in the loop.
+Creative writing aside, I'd like to push these updates more frequently to stay motivated and keep everyone interested in my side projects in the loop.
 
 [Retro 2015]: /2015/achievement-unlocked-2015
 [Speedster]: https://speedsterapp.com
