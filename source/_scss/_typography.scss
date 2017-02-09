@@ -7,6 +7,29 @@ h2 {
   font-weight: 500;
 }
 
+h3,
+h4 {
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+h5 {
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+
+h6 {
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+
 code {
   background: rgba(#000, 0.02);
   border-radius: 2px;
