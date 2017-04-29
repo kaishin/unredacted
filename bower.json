@@ -5,5 +5,8 @@
     "water.scss": "~0.1.2",
     "normalize-scss": "~3.0.2",
     "moment": "~2.9.0"
+  },
+  "resolutions": {
+    "zepto": "^1.2.0"
   }
 }

@@ -2,6 +2,8 @@ $(function() {
   return $(".post-summary time").each(function() {
     var time;
     time = $(this).attr("datetime");
-    return $(this).html(moment(time).fromNow());
+    var dateText = moment(time).fromNow();
+    dateText = dateText.charAt(0).toUpperCase() + dateText.slice(1)
+    return $(this).html(dateText);
   });
 });

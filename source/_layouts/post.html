@@ -3,8 +3,6 @@ layout: default
 ---
 <article class="post">
   <header class="post-header">
-    {% include post_category.html category=page.category %}
-
     <h1 class="post-title">
       <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
         {{ page.title }}
@@ -21,16 +19,10 @@ layout: default
       {% assign reading_time = page.content | strip_html | number_of_words | divided_by: site.wpm %}
       {% include reading_time.html reading_time=reading_time %}
 
-      {% if page.tags %}
-        <span class="separator">&mdash;</span>
-        <ul class="metadata-tag-list">
-          {% for tag in page.tags %}
-          <li class="tag-label">
-            {{ tag }}
-          </li>
-          {% endfor %}
-        </ul>
-      {% endif %}
+      <span class="separator">&mdash;</span>
+
+      Posted in <em>{{ page.category | capitalize }}</em>
+
     </div>
   </header>
 
