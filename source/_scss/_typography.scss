@@ -1,5 +1,5 @@
 body {
-  font-family: "Sintony", "Helvetica Neue", "Arial", sans-serif;
+  font-family: $sans-serif-2;
 }
 
 h1,
@@ -9,37 +9,19 @@ h4,
 h5,
 h6 {
   color: $black;
-  font-family: "Vollkorn", serif;
-}
-
-h1,
-h2 {
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  font-size: 1.2em;
 }
 
 h3,
 h4 {
-  font-weight: 500;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
 }
 
 h4 {
-  font-weight: 400;
-  font-size: 1.1rem;
 }
 
 h5 {
-  font-size: 0.9rem;
-  font-weight: normal;
 }
 
 h6 {
-  font-size: 0.8rem;
-  font-weight: normal;
 }
 
 code {
@@ -58,4 +40,8 @@ sup {
 abbr[title] {
   background-color: rgba(yellow, 0.5);
   border: none;
+}
+
+p {
+  margin: 0 0 1em;
 }

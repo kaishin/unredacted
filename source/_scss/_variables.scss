@@ -26,3 +26,8 @@ $link-color: lighten($accent-color, 10%);
 $link-hover-color: $accent-color;
 $link-visited-color: darken($accent-color, 20%);
 $tertiary-color: darken($ash, 5%);
+
+// Fonts
+$sintony: "Sintony", "Helvetica Neue", "Arial", sans-serif;
+$sans-serif: "PT Sans", sans-serif;
+$sans-serif-2: "Titillium Web", sans-serif;

@@ -3,28 +3,29 @@ layout: default
 ---
 <article class="post">
   <header class="post-header">
+    <div class="post-category">{{ page.category }}</div>
+
     <h1 class="post-title">
       <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
         {{ page.title }}
       </a>
     </h1>
 
-    <div class="post-metadata">
-      <time datetime="{{ page.date | data_to_xmlschema }}">
-        {{ page.date | date: "%R %b %-d, %Y" }}
-      </time>
-
-      <span class="separator">&mdash;</span>
-
-      {% assign reading_time = page.content | strip_html | number_of_words | divided_by: site.wpm %}
-      {% include reading_time.html reading_time=reading_time %}
-
-      <span class="separator">&mdash;</span>
-
-      Posted in <em>{{ page.category | capitalize }}</em>
-
+    <div class="post-intro">
+      {{ page.excerpt }}
     </div>
   </header>
+
+  <aside class="post-metadata">
+    <time datetime="{{ page.date | data_to_xmlschema }}">
+      {{ page.date | date: "%b %-d, %Y" }}
+    </time>
+
+    <span class="separator">&mdash;</span>
+
+    {% assign reading_time = page.content | strip_html | number_of_words | divided_by: site.wpm %}
+    {% include reading_time.html reading_time=reading_time show_dots=false %}
+  </aside>
 
   <section class="post-content">
     {{ content }}
