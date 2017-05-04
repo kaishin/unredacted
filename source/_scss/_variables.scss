@@ -21,6 +21,7 @@ $white: #fff;
 // Colors
 $accent-color: $mauve;
 $ashtray: adjust-hue($accent-color, -50deg);
+
 $link-active-color: darken($accent-color, 40%);
 $link-color: lighten($accent-color, 10%);
 $link-hover-color: $accent-color;
