@@ -43,7 +43,7 @@ article[class*=post] {
   }
 }
 
-.post-content {
+[class*=post-content] {
   font-weight: 400;
   line-height: 1.6;
   margin: 0 0 1em;
@@ -121,7 +121,9 @@ article[class*=post] {
     font-size: 0.8rem;
     text-transform: uppercase;
   }
+}
 
+.full-post-content {
   > p:first-child {
     font-family: $sans-serif;
     font-size: 1.4em;
