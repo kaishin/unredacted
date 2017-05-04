@@ -9,7 +9,6 @@ $margin: 0.14em;
 
 [class*=page-link] {
   @extend %button;
-  font-weight: 100;
 }
 
 .next-page-link {

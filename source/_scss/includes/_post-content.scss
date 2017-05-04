@@ -14,7 +14,6 @@ article[class*=post] {
     color: $gray;
     font-size: 0.85rem;
     font-style: italic;
-    font-weight: 100;
     margin-top: 0.5em;
   }
 
@@ -28,10 +27,6 @@ article[class*=post] {
       border-radius: 0;
       box-shadow: none;
     }
-  }
-
-  strong {
-    font-weight: 500;
   }
 
   ul,
