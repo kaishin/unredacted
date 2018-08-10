@@ -5,6 +5,10 @@
   <meta name="robots" content="noodp, noydir">
   <meta http-equiv="cleartype" content="on">
   <title>{% if page.title %}{{ page.title }} – Unredacted{% else %}{{ site.title }}{% endif %}</title>
+  {% if page.redirect %}
+  <meta http-equiv="refresh" content="0; url={{ page.redirect }}">
+  <link rel="canonical" href="{{ page.redirect }}" />
+  {% endif %}
   {% if page.noindex %}<meta name="robots" content="noindex" />{% endif %}
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <meta name="keywords" content="{% if page.tags.size > 0 %}{{ page.tags | join: ", "}}, {% endif %}{{ site.keywords | join: ", "}}">
