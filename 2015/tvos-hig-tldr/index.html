@@ -8,9 +8,13 @@
   <meta http-equiv="cleartype" content="on">
   <title>tvOS HIG: Too Long; Didn't Read – Unredacted</title>
   
-  <meta name="description" content="I often joke about the HIG being an acronym for Highly Ignored Guidelines.This is an effort to change that, at least for tvOS.">
+  <meta http-equiv="refresh" content="0; url=https://redalemeden.com/blog/2015/tvos-hig-tldr">
+  <link rel="canonical" href="https://redalemeden.com/blog/2015/tvos-hig-tldr" />
+  
+  
+  <meta name="description" content="">
   <meta name="keywords" content="apple, hig, tvos, Reda, Lemeden, kaishinlab, unredacted, design, kaishin">
-  <meta http-equiv="date" content="2015-10-05 00:39:09 +0200">
+  <meta http-equiv="date" content="2015-10-04 23:39:09 +0100">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="https://unredacted.redalemeden.com/2015/tvos-hig-tldr/">
   <link rel="alternate" type="application/rss+xml" title="Unredacted" href="http://feedpress.me/unredacted" />
@@ -51,8 +55,8 @@
     </h1>
 
     <div class="post-metadata">
-      <time datetime="2015-10-05 00:39:09 +0200">
-        00:39 Oct 5, 2015
+      <time datetime="2015-10-04 23:39:09 +0100">
+        23:39 Oct 4, 2015
       </time>
 
       <span class="separator">&mdash;</span>
@@ -63,11 +67,11 @@
 
 
 <span class="reading-time">
-  3 minutes read
+  1 minute read
 </span>
 
-<svg data-reading-time="3" role="img" aria-label="3 minutes read" viewBox="0 0 55 10" xmlns="http://www.w3.org/2000/svg">
-  <title>Reading Time: 3 minutes</title>
+<svg data-reading-time="1" role="img" aria-label="1 minute read" viewBox="0 0 55 10" xmlns="http://www.w3.org/2000/svg">
+  <title>Reading Time: 1 minute</title>
   <circle class="dot" cx="5" cy="5" r="5" />
   <circle class="dot" cx="20" cy="5" r="5" />
   <circle class="dot" cx="35" cy="5" r="5" />
@@ -97,125 +101,7 @@
   </header>
 
   <section class="post-content">
-    <p>I often joke about the <a href="https://developer.apple.com/tvos/human-interface-guidelines/"><abbr title="Human Interface Guidelines">HIG</abbr></a> being an acronym for <em>Highly Ignored Guidelines</em>.<br />
-This is an effort to change that, at least for tvOS.</p>
-
-<figure>
-  <img src="https://unredacted.redalemeden.com/images/tvos.jpg" alt="Apple TV UI" />
     
-      <figcaption>
-        The user interface of Apple TV.
-      </figcaption>
-    
-</figure>
-
-<h2 id="glossary">Glossary</h2>
-
-<ul>
-  <li>
-    <p><strong>Click</strong>. One-finger quick press on the center of the touch surface. The primary way of triggering actions.</p>
-  </li>
-  <li>
-    <p><strong>Click-and-hold</strong>. One-finger long press on the center of the touch surface. Used to trigger context-specific actions, like entering edit mode.</p>
-  </li>
-  <li>
-    <p><strong>Focus</strong>. The state of the currently selected interface element.</p>
-  </li>
-  <li>
-    <p><strong>Parallax</strong>. An effect applied to focused app icons and content elements using multiple layered images.</p>
-  </li>
-  <li>
-    <p><strong>Siri Remote</strong>. The Siri-enabled remote used as the primary input method for Apple TV. It comes with 6 buttons, a touch surface, an accelerometer, and a gyroscope.</p>
-  </li>
-  <li>
-    <p><strong>Swipe</strong>. One-finger press followed by a quick movement in any direction on the touch surface. Used to move focus vertically or horizontally.</p>
-  </li>
-  <li>
-    <p><strong>Tap</strong>. One-finger quick press on one of the four directions (top, right, bottom, left) of the touch surface. Used for single-item directional navigation.</p>
-  </li>
-  <li>
-    <p><strong>Top Shelf</strong>. The area above the first row of apps where featured content of the focused app appears.</p>
-  </li>
-</ul>
-
-<p><em>Update</em>: My colleague <a href="https://twitter.com/jacknutting">Jack Nutting</a> pointed out that clicks require you to press the touch surface until it clicks, whereas taps don’t.</p>
-
-<h2 id="general">General</h2>
-
-<ul>
-  <li>Design with multiple simultaneous users in mind.</li>
-  <li>Prefer showing old data to no data at all.</li>
-  <li>Avoid excessive animation.</li>
-  <li>Avoid using alerts unless it’s for a critical user decision. When you do, provide no more than two choices.</li>
-  <li>Don’t display your logo throughout the app UI.</li>
-  <li>Use the system video player to get advantage of all its interactive features.</li>
-</ul>
-
-<h2 id="focus">Focus</h2>
-
-<ul>
-  <li>Make focus obvious using labels, transforms, and other effects.</li>
-  <li>Use parallax on focused elements to make the UI more responsive to user interaction.</li>
-  <li>Prefer light backgrounds so that focus shadows remain visible.</li>
-</ul>
-
-<h2 id="controls">Controls</h2>
-
-<ul>
-  <li>Keep the difference between click and tap in mind. See the <a href="#glossary">glossary</a>.</li>
-  <li>Avoid using taps for triggering actions other than navigation.</li>
-  <li>Avoid using standard gestures to perform non-standard actions.</li>
-  <li>Avoid defining new gestures to perform standard actions.</li>
-  <li>Make sure your controller-compatible game works with the remote as well.</li>
-  <li>Always enable the Play/Pause button on the Siri Remote. If you are running out of ideas, make it at least perform a click.</li>
-  <li>Use gestures to move focus, not content. For instance, a left swipe would move focus to the left, making the content move to the right.</li>
-  <li>Use gestures to move content when displayed full-screen. For instance. a left swipe on a full-screen image would move the image to the left.</li>
-</ul>
-
-<h2 id="navigation">Navigation</h2>
-
-<ul>
-  <li>Use the tab bar for the main navigation of your app.</li>
-  <li>Allow your users to navigate back to the previous screen or out of your app/game using the Menu button.</li>
-  <li>Don’t display a back button.</li>
-  <li>Keep your content structure simple for easier navigation.</li>
-  <li>Prefer text, more specifically nouns and verbs for your tab titles.</li>
-</ul>
-
-<h2 id="visual-design">Visual Design</h2>
-
-<ul>
-  <li>Design your interface for a 1920 x 1080 pixels (16:9) screen in mind.</li>
-  <li>Use @1x resolution for all image assets.</li>
-  <li>Use an opaque background layer when making your layered images.</li>
-  <li>Provide at least one static Top Shelf image (1920px by 720px) if you don’t have any dynamic content to showcase.</li>
-  <li>Use the sRGB color space.</li>
-  <li>Favor muted color for better results on highly saturated TVs.</li>
-  <li>Prefer top-to-bottom, light-to-dark gradients.</li>
-  <li>Prefer horizontal layouts.</li>
-  <li>Leave 60 pixels on the top and bottom, and 90 pixels on the right and left as padding around the edges of the screen.</li>
-</ul>
-
-<h2 id="text">Text</h2>
-
-<ul>
-  <li>Use San Francisco Text for text 39 points or smaller, and San Francisco Display for text that’s 40 points or larger.</li>
-  <li>Put text in the top-most layer of your layered images.</li>
-  <li>Use the built-in text styles to take advantage of features like Dynamic Type.</li>
-  <li>Use title-case in your text buttons.</li>
-  <li>Avoid combining both icons and text in buttons.</li>
-  <li>Try to limit text-input in your app since typing on the Apple TV can be tedious.</li>
-</ul>
-
-<h2 id="app-icon">App Icon</h2>
-
-<ul>
-  <li>Use a layered image (2-5 layers) for your app icon (1280px by 768px for large version and 400px by 240px for the small one).</li>
-  <li>Leave a padding around the content of your foreground layers.</li>
-  <li>Don’t include screenshots in your app icon.</li>
-  <li>Avoid text in your app icon, unless it’s part of the brand.</li>
-</ul>
-
 
 
     <section class="feedback-box">
@@ -226,7 +112,7 @@ This is an effort to change that, at least for tvOS.</p>
 
     </main>
     <footer>
-  <span class="copyright">&copy;</span> 2009-2017 Reda Lemeden. All Rights Reserved.
+  <span class="copyright">&copy;</span> 2009-2018 Reda Lemeden. All Rights Reserved.
   <script src="/scripts/vendor.js" type="text/javascript"></script>
   <script src="/scripts/main.js" type="text/javascript"></script>
 </footer>
